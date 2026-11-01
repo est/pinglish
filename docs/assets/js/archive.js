@@ -158,6 +158,10 @@
     var id = Number(m[1]);
     var el = document.getElementById("answer-" + id);
     if (!el) return;
+    if (el.classList.contains("is-expanded")) {
+      if (scroll) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      return;
+    }
     if (el._expand) el._expand(scroll !== false);
   }
 
