@@ -1,0 +1,13 @@
+{
+  "name": "pinglish-archive-builder",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Build docs/assets/data/archive.json from the Zhihu markdown digest.",
+  "scripts": {
+    "build": "node build-archive.mjs"
+  },
+  "dependencies": {
+    "marked": "^16.4.1"
+  }
+}
