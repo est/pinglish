@@ -26,6 +26,13 @@ jobs:
         with:
           node-version: 20
 
+      - name: Install archive builder dependencies
+        working-directory: scripts
+        run: npm ci
+
+      - name: Rebuild archive data from the raw digest
+        run: node scripts/build-archive.mjs
+
       - name: Test the Pinglish engine
         run: node scripts/test-pinglish.mjs
 
