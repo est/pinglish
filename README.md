@@ -10,8 +10,6 @@
 - 转换器：汉字 ⇄ 现行拼音 ⇄ Pinglish，逐音节对照。
 - 档案：39 个回答，按立场筛选、搜索、展开全文；英文版提供摘要与原文链接。
 
-线上地址：<https://pinglish.est.im>
-
 > 这不是废除拼音的运动，也不是官方提案。它只是一次参照系实验。
 
 ## 术语
@@ -52,7 +50,6 @@ src/                        GitHub Pages 发布目录
     data/archive-en.json    39 条英文摘要
     vendor/pinyin-pro.js    pinyin-pro 3.29.5（MIT）
   images/23148320/          部署用图片副本
-  CNAME                     pinglish.est.im
   .nojekyll
 
 .github/workflows/pages.yml GitHub Pages 构建与部署
@@ -94,7 +91,7 @@ node test-pinglish.mjs
 2. 把 `src/` 作为 GitHub Pages artifact 上传；
 3. 部署到 GitHub Pages。
 
-仓库的 Pages Source 需要设为 **GitHub Actions**。自定义域名由 `src/CNAME` 指向 `pinglish.est.im`。
+仓库的 Pages Source 需要设为 **GitHub Actions**。自定义域名可选，在仓库 Settings → Pages 里配置；项目本身不假设任何域名，页面内链接全部使用相对路径。`src/og.png` 是社交卡片素材，部署后如需 `og:image`，请填入实际的完整 URL。
 
 ## 许可
 
