@@ -26,13 +26,15 @@ docs/                       原始材料（不参与 Pages 部署）
   images/23148320/          13 张原始图片
 
 src/                        GitHub Pages 发布目录
-  index.html                汉语版叙事首页
+  index.html                汉语版产品首页（三层 ruby 对照 + 转换器）
+  story.html                叙事长文（一个名字，四种写法）
   scheme.html               Pinglish 完整规格
   convert.html              交互式转换器
   archive.html              39 份证词
   about.html                方法、来源、事实核查、版权
   en/                       英语版
     index.html
+    story.html
     scheme.html
     convert.html
     archive.html
@@ -41,6 +43,7 @@ src/                        GitHub Pages 发布目录
     css/style.css           设计系统
     js/site.js              主题、导航、滚动揭示、复制
     js/pinglish.js          Pinglish 转换引擎（UMD）
+    js/ruby.js              三层 ruby 组件（拼音 / 汉字 / Pinglish）
     js/convert.js           转换器 UI（双语）
     js/archive.js           汉语版档案 UI
     js/archive-en.js        英语版档案 UI

@@ -24,7 +24,7 @@
   <div class="wrap nav">
     <a class="wordmark" href="index.html"><span class="dot"></span>PINGLISH <small>another possible pinyin</small></a>
     <nav class="nav-links" aria-label="Main navigation">
-      <a href="index.html">Story</a>
+      <a href="index.html">Start</a>
       <a href="scheme.html">Scheme</a>
       <a href="convert.html">Converter</a>
       <a href="archive.html">Archive</a>
@@ -40,7 +40,7 @@
 <main>
 
 <!-- ============================================================ HERO -->
-<section class="hero wrap">
+<section class="hero wrap hero--compact">
   <div class="hero-top">
     <span class="kicker">The scheme</span>
     <span class="eyebrow">v1.0 · 22 letters · 407 syllables · 0 collisions</span>
@@ -55,7 +55,7 @@
       </h1>
       <p class="hero-sub">No ü. No tone marks. No y/w glides. No iu/ui/un contractions. No j/q/x. Every character is on the keyboard, and every spelling can be parsed back into pinyin.</p>
       <div class="hero-actions">
-        <a class="btn btn--primary" href="#tables">See the tables <span class="arrow">↓</span></a>
+        <a class="btn btn--primary" href="#changes">See what changed <span class="arrow">↓</span></a>
         <a class="btn" href="convert.html">Try the converter</a>
         <a class="btn btn--ghost" href="../assets/data/syllables.json" download>Download syllables.json</a>
       </div>
@@ -65,26 +65,22 @@
     </aside>
   </div>
 
-  <div class="name-stack" aria-label="Scheme at a glance">
-    <div class="name-row">
-      <span class="idx">A</span>
-      <span class="form">lv3</span>
-      <span class="meta"><strong>Lü</strong><span>ü is v. No explanation, no lyu.</span></span>
+  <div class="ruby-panel">
+    <div class="ruby-panel-head">
+      <span class="label">Lü xiānsheng hé Xuē xiǎojiě qù Xī'ān / three layers</span>
+      <div class="compare-toggle" data-ruby-toggle data-target="#scheme-ruby" role="group" aria-label="Switch annotations">
+        <button type="button" data-view="py" aria-pressed="false">Pinyin</button>
+        <button type="button" data-view="both" aria-pressed="true">Both</button>
+        <button type="button" data-view="pl" aria-pressed="false">Pinglish</button>
+      </div>
     </div>
-    <div class="name-row">
-      <span class="idx">B</span>
-      <span class="form">zhy1</span>
-      <span class="meta"><strong>Zhī</strong><span>The apical vowel gets its own letter, y.</span></span>
-    </div>
-    <div class="name-row">
-      <span class="idx">C</span>
-      <span class="form">gi1</span>
-      <span class="meta"><strong>Jī</strong><span>No j/q/x. g/k/h read as palatals before i/v.</span></span>
-    </div>
-    <div class="name-row">
-      <span class="idx">D</span>
-      <span class="form">ma1</span>
-      <span class="meta"><strong>Mā</strong><span>Tone is part of the spelling, not a hat.</span></span>
+    <div class="ruby-demo ruby-demo--lg" id="scheme-ruby" data-ruby="吕先生和薛小姐去西安" data-view="both">吕先生和薛小姐去西安</div>
+    <div class="ruby-legend">
+      <span>top: current pinyin</span>
+      <span>middle: Hanzi</span>
+      <span>bottom: Pinglish</span>
+      <span class="accent">red underline = changed letter</span>
+      <span>hover / tap a character for the rule</span>
     </div>
   </div>
 </section>
@@ -96,33 +92,22 @@
   </div>
 </div>
 
-<!-- ============================================================ 00 -->
-<section class="section" id="principles">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div class="num">00 / 07</div>
-      <div>
-        <h2 class="display display-lg title">Six principles.</h2>
-        <p class="lede muted" style="margin-top:1em;max-width:32em">Set the constraints first, then argue about spelling. Each one answers a compromise from 1958.</p>
-      </div>
-    </div>
-
-    <div class="grid">
-      <div class="col-4 card reveal"><span class="idx">01</span><h3>Plain ASCII</h3><p>No ü, no tone marks, no diacritics. v is the vowel /y/. Passports, URLs, SQL and old terminals will not eat it.</p></div>
-      <div class="col-4 card reveal"><span class="idx">02</span><h3>No contractions</h3><p>iou, uei and uen are always written out. No iu/ui/un, and no “the main vowel disappears when you mark the tone”.</p></div>
-      <div class="col-4 card reveal"><span class="idx">03</span><h3>No rewrites</h3><p>au is not written ao; ung is not written ong; iung is not written iong; ien is not written ian. Spelling does not hide history.</p></div>
-      <div class="col-4 card reveal"><span class="idx">04</span><h3>No silent glides</h3><p>No y/w as orthographic initials. Zero-initial syllables are written with their vowel; an apostrophe separates syllables when needed: Xi'an → hi1'an1.</p></div>
-      <div class="col-4 card reveal"><span class="idx">05</span><h3>Apical vowel separate</h3><p>The final in zi/ci/si/zhi/chi/shi/ri is written y. zhi and ji no longer share an i.</p></div>
-      <div class="col-4 card reveal"><span class="idx">06</span><h3>Tone after the syllable</h3><p>1–4 for the four tones, 0 for neutral. Tone is part of the spelling, not an optional ornament.</p></div>
-    </div>
-  </div>
-</section>
+<nav class="wrap toc" aria-label="On this page">
+  <a href="#changes">Changes</a>
+  <a href="#principles">Principles</a>
+  <a href="#tables">Initials / finals</a>
+  <a href="#tones">Tone</a>
+  <a href="#sample">Sample</a>
+  <a href="#tradeoffs">Trade-offs</a>
+  <a href="#lineage">Lineage</a>
+  <a href="#download">Download</a>
+</nav>
 
 <!-- ============================================================ 01 -->
 <section class="section" id="changes">
   <div class="wrap">
     <div class="section-head reveal">
-      <div class="num">01 / 07</div>
+      <div class="num">00 / 07</div>
       <div>
         <h2 class="display display-lg title">What changed.</h2>
         <p class="lede muted" style="margin-top:1em;max-width:34em">Twelve rules covering the twelve most discussed positions in the current scheme.</p>
@@ -149,6 +134,28 @@
       </table>
     </div>
     <div class="legend"><span><i></i>red is Pinglish</span><span>grey strikethrough is current pinyin</span><span>all examples are complete syllables</span></div>
+  </div>
+</section>
+
+<!-- ============================================================ 00 -->
+<section class="section" id="principles">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="num">01 / 07</div>
+      <div>
+        <h2 class="display display-lg title">Six principles.</h2>
+        <p class="lede muted" style="margin-top:1em;max-width:32em">Set the constraints first, then argue about spelling. Each one answers a compromise from 1958.</p>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="col-4 card reveal"><span class="idx">01</span><h3>Plain ASCII</h3><p>No ü, no tone marks, no diacritics. v is the vowel /y/. Passports, URLs, SQL and old terminals will not eat it.</p></div>
+      <div class="col-4 card reveal"><span class="idx">02</span><h3>No contractions</h3><p>iou, uei and uen are always written out. No iu/ui/un, and no “the main vowel disappears when you mark the tone”.</p></div>
+      <div class="col-4 card reveal"><span class="idx">03</span><h3>No rewrites</h3><p>au is not written ao; ung is not written ong; iung is not written iong; ien is not written ian. Spelling does not hide history.</p></div>
+      <div class="col-4 card reveal"><span class="idx">04</span><h3>No silent glides</h3><p>No y/w as orthographic initials. Zero-initial syllables are written with their vowel; an apostrophe separates syllables when needed: Xi'an → hi1'an1.</p></div>
+      <div class="col-4 card reveal"><span class="idx">05</span><h3>Apical vowel separate</h3><p>The final in zi/ci/si/zhi/chi/shi/ri is written y. zhi and ji no longer share an i.</p></div>
+      <div class="col-4 card reveal"><span class="idx">06</span><h3>Tone after the syllable</h3><p>1–4 for the four tones, 0 for neutral. Tone is part of the spelling, not an optional ornament.</p></div>
+    </div>
   </div>
 </section>
 
@@ -414,10 +421,11 @@
       <div>
         <h4>Read</h4>
         <ul>
-          <li><a href="index.html#story">One name, four spellings</a></li>
-          <li><a href="index.html#compromise">Four impossibilities, 1958</a></li>
-          <li><a href="index.html#overload">One alphabet, three jobs</a></li>
+          <li><a href="story.html#story">One name, four spellings</a></li>
+          <li><a href="story.html#compromise">Four impossibilities, 1958</a></li>
+          <li><a href="story.html#overload">One alphabet, three jobs</a></li>
           <li><a href="archive.html">39 testimonies</a></li>
+          <li><a href="story.html">The full story</a></li>
         </ul>
       </div>
       <div>
@@ -447,5 +455,8 @@
 </footer>
 
 <script src="../assets/js/site.js"></script>
+<script src="../assets/vendor/pinyin-pro.js"></script>
+<script src="../assets/js/pinglish.js"></script>
+<script src="../assets/js/ruby.js"></script>
 </body>
 </html>

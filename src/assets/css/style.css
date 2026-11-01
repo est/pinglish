@@ -1214,3 +1214,253 @@ table.spec--center td, table.spec--center th { text-align: center; }
   .section { padding-block: 24px; }
   .answer-body { display: block !important; }
 }
+
+/* --------------------------------------------------------------------------
+   Ruby stack — the main explanatory device
+   -------------------------------------------------------------------------- */
+
+.ruby-panel {
+  border: 1px solid var(--line-strong);
+  background: var(--paper-2);
+  padding: clamp(14px, 1.8vw, 22px);
+  margin-top: clamp(22px, 3vw, 36px);
+}
+
+.ruby-panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 8px;
+  margin-bottom: 14px;
+}
+
+.ruby-panel-head .label {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.ruby-demo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 0.45em 0.55em;
+  line-height: 1;
+}
+
+.ruby-demo--lg { font-size: clamp(1.25rem, 2.8vw, 2rem); }
+.ruby-demo--sm { font-size: clamp(0.95rem, 1.6vw, 1.15rem); gap: 0.3em 0.4em; }
+
+.ruby-cell {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1.2em auto 1.2em;
+  justify-items: center;
+  align-items: end;
+  min-width: 1.25em;
+}
+
+.ruby-demo--sm .ruby-cell { grid-template-rows: 1.1em auto 1.1em; }
+
+.ruby-py,
+.ruby-pl {
+  font-family: var(--font-mono);
+  font-size: 0.56em;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.ruby-demo--sm .ruby-py,
+.ruby-demo--sm .ruby-pl { font-size: 0.64em; }
+
+.ruby-hz {
+  font-family: var(--font-display);
+  font-size: 1.75em;
+  line-height: 1.1;
+}
+
+.ruby-pl { color: var(--accent); }
+.ruby-pl .tone { color: var(--accent); }
+
+.ruby-pl ins {
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent);
+}
+
+.ruby-cell.is-changed .ruby-py {
+  color: var(--accent);
+  opacity: 0.72;
+}
+
+.ruby-cell--punct .ruby-py,
+.ruby-cell--punct .ruby-pl { visibility: hidden; }
+
+.ruby-demo[data-view="py"] .ruby-pl { visibility: hidden; }
+.ruby-demo[data-view="pl"] .ruby-py { visibility: hidden; }
+.ruby-demo[data-view="none"] .ruby-py,
+.ruby-demo[data-view="none"] .ruby-pl { visibility: hidden; }
+
+.ruby-demo[data-view="none"] .ruby-cell { grid-template-rows: 0 auto 0; }
+
+.ruby-cell[data-rule] { cursor: help; }
+
+.ruby-cell[data-rule]:hover::after,
+.ruby-cell[data-rule]:focus-visible::after {
+  content: attr(data-rule);
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 8px);
+  transform: translateX(-50%);
+  background: var(--ink);
+  color: var(--paper);
+  padding: 0.4em 0.6em;
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  line-height: 1.3;
+  white-space: nowrap;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.ruby-cell[data-rule]:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.ruby-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em 1.2em;
+  margin-top: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+.ruby-legend .accent { color: var(--accent); }
+.ruby-legend .mono { color: var(--ink); }
+
+.rule-grid { align-items: stretch; }
+
+.rule-card {
+  border: 1px solid var(--line);
+  padding: clamp(14px, 2vw, 22px);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-height: 180px;
+  background: transparent;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+.rule-card:hover { border-color: var(--line-strong); background: var(--paper-2); }
+
+.rule-card .rule-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.rule-card .rule-head .mono {
+  font-size: 0.72rem;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+}
+
+.rule-card p {
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: var(--muted);
+  margin-top: auto;
+}
+
+.evidence-list { border-top: 1px solid var(--line-strong); }
+
+.evidence-item {
+  display: grid;
+  grid-template-columns: 78px minmax(0, 1fr) auto;
+  gap: 16px;
+  align-items: baseline;
+  padding: 1em 0;
+  border-bottom: 1px solid var(--line);
+}
+.evidence-item .votes {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  line-height: 1;
+  color: var(--accent);
+}
+.evidence-item p {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 1.5vw, 1.18rem);
+  line-height: 1.6;
+}
+.evidence-item a {
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  text-decoration: none;
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.toc {
+  position: sticky;
+  top: 64px;
+  z-index: 20;
+  display: flex;
+  gap: 1.2em;
+  overflow-x: auto;
+  padding: 0.7em 0;
+  border-block: 1px solid var(--line);
+  background: var(--paper);
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.04em;
+}
+.toc a { color: var(--muted); text-decoration: none; white-space: nowrap; }
+.toc a:hover { color: var(--accent); }
+
+@media (max-width: 720px) {
+  .ruby-panel { padding: 14px; }
+  .ruby-demo--lg { font-size: 1.1rem; gap: 0.3em 0.25em; }
+  .ruby-hz { font-size: 1.5em; }
+  .evidence-item { grid-template-columns: 54px minmax(0, 1fr); gap: 10px 14px; }
+  .evidence-item a { grid-column: 2; }
+  .toc { top: 56px; }
+}
+
+.ruby-space { display: inline-block; width: 0.35em; }
+.ruby-cell--punct .ruby-hz { color: var(--muted); }
+
+.hero-title--flat .line:nth-child(2) { padding-left: 0; }
+.hero-title--en { font-size: clamp(3rem, 7.4vw, 6.8rem); }
+
+.hero--compact { padding-top: clamp(26px, 4vw, 48px); padding-bottom: clamp(36px, 5vw, 64px); }
+.hero--compact .hero-top { margin-bottom: clamp(20px, 3vw, 36px); }
+
+.converter--compact #conv-breakdown { display: none; }
+.converter--compact .converter-body { padding: clamp(12px, 1.6vw, 18px); }
+.converter--compact .converter-hint { margin-top: 10px; }
+
+.mobile-name-line {
+  display: none;
+  margin-top: 16px;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+}
+.mobile-name-line .accent { color: var(--accent); }
+
+@media (max-width: 720px) {
+  .hero-note { display: none; }
+  .mobile-name-line { display: block; }
+}
+
+.section[id] { scroll-margin-top: 132px; }
+@media (max-width: 720px) { .section[id] { scroll-margin-top: 110px; } }

@@ -21,7 +21,7 @@
   <div class="wrap nav">
     <a class="wordmark" href="index.html"><span class="dot"></span>PINGLISH <small>拼音的另一种可能</small></a>
     <nav class="nav-links" aria-label="主导航">
-      <a href="index.html">故事</a>
+      <a href="index.html">开始</a>
       <a href="scheme.html">方案</a>
       <a href="convert.html">转换器</a>
       <a href="archive.html">档案</a>
@@ -37,7 +37,7 @@
 <main>
 
 <!-- ============================================================ HERO -->
-<section class="hero wrap">
+<section class="hero wrap hero--compact">
   <div class="hero-top">
     <span class="kicker">The scheme</span>
     <span class="eyebrow">v1.0 · 22 letters · 407 syllables · 0 collisions</span>
@@ -52,7 +52,7 @@
       </h1>
       <p class="hero-sub">没有 ü，没有声调符号，没有 y/w 隔音字母，没有 iu/ui/un 简写，没有 j/q/x。所有字符都在键盘上，所有拼写都能倒推回拼音。</p>
       <div class="hero-actions">
-        <a class="btn btn--primary" href="#tables">看声母韵母表 <span class="arrow">↓</span></a>
+        <a class="btn btn--primary" href="#changes">看改了什么 <span class="arrow">↓</span></a>
         <a class="btn" href="convert.html">直接试转换</a>
         <a class="btn btn--ghost" href="assets/data/syllables.json" download>下载音节表 JSON</a>
       </div>
@@ -62,26 +62,22 @@
     </aside>
   </div>
 
-  <div class="name-stack" aria-label="方案摘要">
-    <div class="name-row">
-      <span class="idx">A</span>
-      <span class="form">lv3</span>
-      <span class="meta"><strong>吕</strong><span>ü 就是 v。不需要解释，不需要 lyu。</span></span>
+  <div class="ruby-panel">
+    <div class="ruby-panel-head">
+      <span class="label">吕先生和薛小姐去西安 / 三层对照</span>
+      <div class="compare-toggle" data-ruby-toggle data-target="#scheme-ruby" role="group" aria-label="切换标注">
+        <button type="button" data-view="py" aria-pressed="false">拼音</button>
+        <button type="button" data-view="both" aria-pressed="true">双层</button>
+        <button type="button" data-view="pl" aria-pressed="false">Pinglish</button>
+      </div>
     </div>
-    <div class="name-row">
-      <span class="idx">B</span>
-      <span class="form">zhy1</span>
-      <span class="meta"><strong>知</strong><span>舌尖元音有自己的字母 y。</span></span>
-    </div>
-    <div class="name-row">
-      <span class="idx">C</span>
-      <span class="form">gi1</span>
-      <span class="meta"><strong>鸡</strong><span>没有 j/q/x。g/k/h 在 i/v 前变读。</span></span>
-    </div>
-    <div class="name-row">
-      <span class="idx">D</span>
-      <span class="form">ma1</span>
-      <span class="meta"><strong>妈</strong><span>声调是拼写的一部分，不是一个帽子。</span></span>
+    <div class="ruby-demo ruby-demo--lg" id="scheme-ruby" data-ruby="吕先生和薛小姐去西安" data-view="both">吕先生和薛小姐去西安</div>
+    <div class="ruby-legend">
+      <span>上：现行拼音</span>
+      <span>中：汉字</span>
+      <span>下：Pinglish</span>
+      <span class="accent">红色下划线 = 改写的字母</span>
+      <span>悬停 / 点按单字看规则</span>
     </div>
   </div>
 </section>
@@ -93,33 +89,22 @@
   </div>
 </div>
 
-<!-- ============================================================ 00 -->
-<section class="section" id="principles">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div class="num">00 / 07</div>
-      <div>
-        <h2 class="display display-lg title">六条原则。</h2>
-        <p class="lede muted" style="margin-top:1em;max-width:32em">先定约束，再谈拼写。每一条都对应 1958 年的一个妥协。</p>
-      </div>
-    </div>
-
-    <div class="grid">
-      <div class="col-4 card reveal"><span class="idx">01</span><h3>纯 ASCII</h3><p>不使用 ü、声调符号或任何附加符号。v 就是元音 /y/。护照、URL、SQL、老式终端都不会吞掉它。</p></div>
-      <div class="col-4 card reveal"><span class="idx">02</span><h3>不简写</h3><p>iou、uei、uen 永远写全。没有 iu/ui/un，也不会出现「标调时主元音消失」。</p></div>
-      <div class="col-4 card reveal"><span class="idx">03</span><h3>不改写</h3><p>au 不写 ao，ung 不写 ong，iung 不写 iong，ien 不写 ian。拼写和发音之间不隔历史。</p></div>
-      <div class="col-4 card reveal"><span class="idx">04</span><h3>不设形式声母</h3><p>没有 y、w 隔音字母。零声母直接写韵母，必要时用一个撇号分音节：西安 hi1'an1。</p></div>
-      <div class="col-4 card reveal"><span class="idx">05</span><h3>舌尖元音独立</h3><p>zi/ci/si/zhi/chi/shi/ri 的韵母写作 y。zhi 和 ji 不再共用一个 i。</p></div>
-      <div class="col-4 card reveal"><span class="idx">06</span><h3>声调后置</h3><p>1–4 表示四声，0 表示轻声。声调是拼写的一部分，不是可以省略的装饰。</p></div>
-    </div>
-  </div>
-</section>
+<nav class="wrap toc" aria-label="页内导航">
+  <a href="#changes">改动</a>
+  <a href="#principles">原则</a>
+  <a href="#tables">声韵母</a>
+  <a href="#tones">声调</a>
+  <a href="#sample">样例</a>
+  <a href="#tradeoffs">代价</a>
+  <a href="#lineage">谱系</a>
+  <a href="#download">下载</a>
+</nav>
 
 <!-- ============================================================ 01 -->
 <section class="section" id="changes">
   <div class="wrap">
     <div class="section-head reveal">
-      <div class="num">01 / 07</div>
+      <div class="num">00 / 07</div>
       <div>
         <h2 class="display display-lg title">改了什么。</h2>
         <p class="lede muted" style="margin-top:1em;max-width:34em">十二条规则，覆盖现行方案里被讨论最多的十二个位置。</p>
@@ -146,6 +131,28 @@
       </table>
     </div>
     <div class="legend"><span><i></i>红色为 Pinglish</span><span>灰色删除线为现行拼音</span><span>所有例子均为完整音节</span></div>
+  </div>
+</section>
+
+<!-- ============================================================ 00 -->
+<section class="section" id="principles">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="num">01 / 07</div>
+      <div>
+        <h2 class="display display-lg title">六条原则。</h2>
+        <p class="lede muted" style="margin-top:1em;max-width:32em">先定约束，再谈拼写。每一条都对应 1958 年的一个妥协。</p>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="col-4 card reveal"><span class="idx">01</span><h3>纯 ASCII</h3><p>不使用 ü、声调符号或任何附加符号。v 就是元音 /y/。护照、URL、SQL、老式终端都不会吞掉它。</p></div>
+      <div class="col-4 card reveal"><span class="idx">02</span><h3>不简写</h3><p>iou、uei、uen 永远写全。没有 iu/ui/un，也不会出现「标调时主元音消失」。</p></div>
+      <div class="col-4 card reveal"><span class="idx">03</span><h3>不改写</h3><p>au 不写 ao，ung 不写 ong，iung 不写 iong，ien 不写 ian。拼写和发音之间不隔历史。</p></div>
+      <div class="col-4 card reveal"><span class="idx">04</span><h3>不设形式声母</h3><p>没有 y、w 隔音字母。零声母直接写韵母，必要时用一个撇号分音节：西安 hi1'an1。</p></div>
+      <div class="col-4 card reveal"><span class="idx">05</span><h3>舌尖元音独立</h3><p>zi/ci/si/zhi/chi/shi/ri 的韵母写作 y。zhi 和 ji 不再共用一个 i。</p></div>
+      <div class="col-4 card reveal"><span class="idx">06</span><h3>声调后置</h3><p>1–4 表示四声，0 表示轻声。声调是拼写的一部分，不是可以省略的装饰。</p></div>
+    </div>
   </div>
 </section>
 
@@ -411,10 +418,11 @@
       <div>
         <h4>读</h4>
         <ul>
-          <li><a href="index.html#story">一个名字，四种写法</a></li>
-          <li><a href="index.html#compromise">1958 年的四个不可能</a></li>
-          <li><a href="index.html#overload">一套字母，三份工作</a></li>
+          <li><a href="story.html#story">一个名字，四种写法</a></li>
+          <li><a href="story.html#compromise">1958 年的四个不可能</a></li>
+          <li><a href="story.html#overload">一套字母，三份工作</a></li>
           <li><a href="archive.html">39 份证词</a></li>
+          <li><a href="story.html">完整故事</a></li>
         </ul>
       </div>
       <div>
@@ -444,5 +452,8 @@
 </footer>
 
 <script src="assets/js/site.js"></script>
+<script src="assets/vendor/pinyin-pro.js"></script>
+<script src="assets/js/pinglish.js"></script>
+<script src="assets/js/ruby.js"></script>
 </body>
 </html>
