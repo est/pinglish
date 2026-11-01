@@ -1,6 +1,6 @@
 # Archive data builder
 
-Regenerates `docs/assets/data/archive.json` from the Zhihu digest at
+Regenerates `src/assets/data/archive.json` from the Zhihu digest at
 `docs/23148320.md`.
 
 ## Build
@@ -15,7 +15,7 @@ That is the whole build. Node 20+ is required (`marked` 16 declares
 
 The script resolves the repository root from its own location, so it also
 works if invoked as `node scripts/build-archive.mjs` from the repository
-root. The output path is always `docs/assets/data/archive.json`.
+root. The output path is always `src/assets/data/archive.json`.
 
 ## What it does
 
@@ -28,7 +28,7 @@ root. The output path is always `docs/assets/data/archive.json`.
   emphasis and lists are preserved) and sanitises the HTML: `<script>`,
   `<iframe>`, `on*=` attributes and `javascript:` URLs are removed.
 - Rewrites relative `images/23148320/...` paths unchanged (they resolve
-  from `docs/`) and records only images that exist on disk.
+  from `src/`) and records only images that exist on disk.
 - Builds a plain-text excerpt (140–220 Chinese characters where the source
   is long enough), an approximate `wordCount` (CJK characters + Latin
   words), and the fixed stance/stance-label pair for each answer.

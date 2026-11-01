@@ -3,6 +3,35 @@
 (function () {
   "use strict";
 
+  var EN = (document.documentElement.lang || "").toLowerCase().indexOf("en") === 0;
+  var STR = EN ? {
+    breakdown: ["Hanzi", "Pinyin", "Pinglish", "Tone"],
+    first80: "Showing the first 80 syllables.",
+    waiting: "Waiting for input…",
+    engineMissing: "Conversion engine not loaded.",
+    libMissing: "pinyin-pro not loaded.",
+    outputPlaceholder: "Output will appear here.",
+    errorPrefix: "Error: ",
+    labels: {
+      zh: { in: "Chinese / Hanzi", out: "Pinglish", ph: "Type a Chinese sentence, e.g. 吕先生和薛小姐去西安" },
+      py: { in: "Pinyin (marks or numbers)", out: "Pinglish", ph: "Type pinyin, e.g. lü3 xue1 xi1 an1" },
+      pl: { in: "Pinglish", out: "Pinyin", ph: "Type Pinglish, e.g. lv3 hve1 hi1'an1" }
+    }
+  } : {
+    breakdown: ["汉字", "拼音", "Pinglish", "调"],
+    first80: "仅显示前 80 个音节。",
+    waiting: "等待输入……",
+    engineMissing: "转换引擎尚未加载。",
+    libMissing: "pinyin-pro 尚未加载。",
+    outputPlaceholder: "输出会出现在这里。",
+    errorPrefix: "错误：",
+    labels: {
+      zh: { in: "汉语 / 汉字", out: "Pinglish", ph: "输入一句汉语，例如：吕先生和薛小姐去西安" },
+      py: { in: "现行拼音 / 带调号或数字", out: "Pinglish", ph: "输入拼音，例如：lü3 xue1 xi1 an1" },
+      pl: { in: "Pinglish", out: "现行拼音", ph: "输入 Pinglish，例如：lv3 hve1 hi1'an1" }
+    }
+  };
+
   var $ = function (sel, root) { return (root || document).querySelector(sel); };
   var $$ = function (sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); };
 
@@ -85,7 +114,7 @@
     var host = $("#conv-breakdown");
     if (!host) return;
     if (!rows || !rows.length) { host.innerHTML = ""; return; }
-    var html = '<div class="breakdown-row head"><span>汉字</span><span>拼音</span><span>Pinglish</span><span>调</span></div>';
+    var html = '<div class="breakdown-row head"><span>' + STR.breakdown[0] + '</span><span>' + STR.breakdown[1] + '</span><span>' + STR.breakdown[2] + '</span><span>' + STR.breakdown[3] + '</span></div>';
     rows.slice(0, 80).forEach(function (r) {
       html += '<div class="breakdown-row">' +
         '<span class="han">' + esc(r.han) + '</span>' +
@@ -95,7 +124,7 @@
         '</div>';
     });
     if (rows.length > 80) {
-      html += '<div class="breakdown-row"><span class="small muted" style="grid-column:1/-1">仅显示前 80 个音节。</span></div>';
+      html += '<div class="breakdown-row"><span class="small muted" style="grid-column:1/-1">' + STR.first80 + '</span></div>';
     }
     host.innerHTML = html;
   }
@@ -125,17 +154,17 @@
     function convert() {
       var text = input.value.trim();
       if (!text) {
-        output.innerHTML = '<span class="placeholder">等待输入……</span>';
+        output.innerHTML = '<span class="placeholder">' + STR.waiting + '</span>';
         setStatus(status, "READY");
         return;
       }
       if (!hasEngine()) {
-        output.innerHTML = '<span class="placeholder">转换引擎尚未加载。</span>';
+        output.innerHTML = '<span class="placeholder">' + STR.engineMissing + '</span>';
         setStatus(status, "ENGINE MISSING", true);
         return;
       }
       if (!hasPinyinPro()) {
-        output.innerHTML = '<span class="placeholder">pinyin-pro 尚未加载。</span>';
+        output.innerHTML = '<span class="placeholder">' + STR.libMissing + '</span>';
         setStatus(status, "LIBRARY MISSING", true);
         return;
       }
@@ -203,9 +232,9 @@
     var exIndex = { zh: 0, py: 0, pl: 0 };
 
     var labels = {
-      zh: { in: "中文 / 汉字", out: "Pinglish", ph: "输入一句中文，例如：吕先生和薛小姐去西安" },
-      py: { in: "现行拼音 / 带调号或数字", out: "Pinglish", ph: "输入拼音，例如：lü3 xue1 xi1 an1" },
-      pl: { in: "Pinglish", out: "现行拼音", ph: "输入 Pinglish，例如：lv3 hve1 hi1'an1" }
+      zh: STR.labels.zh,
+      py: STR.labels.py,
+      pl: STR.labels.pl
     };
 
     function setMode(next) {
@@ -225,18 +254,18 @@
       var text = input.value.trim();
       if (breakdown) breakdown.innerHTML = "";
       if (!text) {
-        output.innerHTML = '<span class="placeholder">输出会出现在这里。</span>';
+        output.innerHTML = '<span class="placeholder">' + STR.outputPlaceholder + '</span>';
         setStatus(status, "READY");
         return;
       }
       if (!hasEngine()) {
-        output.innerHTML = '<span class="placeholder">转换引擎尚未加载。</span>';
+        output.innerHTML = '<span class="placeholder">' + STR.engineMissing + '</span>';
         setStatus(status, "ENGINE MISSING", true);
         return;
       }
       try {
         if (mode === "zh") {
-          if (!hasPinyinPro()) throw new Error("pinyin-pro 尚未加载");
+          if (!hasPinyinPro()) throw new Error(STR.libMissing);
           var pg = zhToPinglish(text);
           output.innerHTML = toneHtml(pg);
           renderBreakdown(zhRows(text));

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Build docs/assets/data/archive.json from the markdown digest
+ * Build src/assets/data/archive.json from the markdown digest
  * docs/23148320.md (39 Zhihu answers about the Hanyu Pinyin scheme).
  *
  * Reproducible: all data except the hand-curated stance classification
@@ -18,9 +18,9 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 const SOURCE_REL = 'docs/23148320.md';
 const SOURCE = path.join(ROOT, SOURCE_REL);
-const OUT_REL = 'docs/assets/data/archive.json';
+const OUT_REL = 'src/assets/data/archive.json';
 const OUT = path.join(ROOT, OUT_REL);
-const DOCS = path.join(ROOT, 'docs');
+const DOCS = path.join(ROOT, 'src');
 
 const QUESTION = '《汉语拼音方案》有哪些明显的硬伤？';
 const QUESTION_URL = 'https://www.zhihu.com/question/23148320';

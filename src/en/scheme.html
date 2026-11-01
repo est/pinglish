@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pinglish v1.0 — The scheme</title>
+<meta name="description" content="The full Pinglish specification: 22 letters, 407 syllables, zero collisions, reversible. A plain-ASCII romanization for Standard Chinese.">
+<meta name="theme-color" content="#f2eee3">
+<meta property="og:title" content="Pinglish v1.0 — One sound, one spelling">
+<meta property="og:description" content="A reversible, plain-ASCII romanization for Standard Chinese: 22 letters, 407 syllables, zero collisions.">
+
+<meta property="og:image" content="https://pinglish.est.im/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" hreflang="zh-CN" href="https://pinglish.est.im/scheme.html">
+<link rel="alternate" hreflang="en" href="https://pinglish.est.im/en/scheme.html">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="wordmark" href="index.html"><span class="dot"></span>PINGLISH <small>another possible pinyin</small></a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="index.html">Story</a>
+      <a href="scheme.html">Scheme</a>
+      <a href="convert.html">Converter</a>
+      <a href="archive.html">Archive</a>
+      <a href="about.html">About</a>
+    </nav>
+    <div class="nav-tools">
+      <a class="lang-switch" href="../scheme.html" hreflang="zh-CN" lang="zh-CN">汉语</a>
+      <button class="icon-btn" data-theme-toggle type="button" aria-label="Switch theme"></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============================================================ HERO -->
+<section class="hero wrap">
+  <div class="hero-top">
+    <span class="kicker">The scheme</span>
+    <span class="eyebrow">v1.0 · 22 letters · 407 syllables · 0 collisions</span>
+  </div>
+
+  <div class="grid">
+    <div class="col-8">
+      <p class="eyebrow" style="margin-bottom:10px">PINGLISH / a reversible romanization for Standard Chinese</p>
+      <h1 class="display display-xl hero-title" style="max-width:12em">
+        <span class="line">One sound,</span>
+        <span class="line">one spelling.</span>
+      </h1>
+      <p class="hero-sub">No ü. No tone marks. No y/w glides. No iu/ui/un contractions. No j/q/x. Every character is on the keyboard, and every spelling can be parsed back into pinyin.</p>
+      <div class="hero-actions">
+        <a class="btn btn--primary" href="#tables">See the tables <span class="arrow">↓</span></a>
+        <a class="btn" href="convert.html">Try the converter</a>
+        <a class="btn btn--ghost" href="../assets/data/syllables.json" download>Download syllables.json</a>
+      </div>
+    </div>
+    <aside class="col-4 hero-aside">
+      <p class="note">This is a design exercise, not an official standard. Its value is not “this is how it should be”, but the proof that another set of constraints produces a different, coherent answer.</p>
+    </aside>
+  </div>
+
+  <div class="name-stack" aria-label="Scheme at a glance">
+    <div class="name-row">
+      <span class="idx">A</span>
+      <span class="form">lv3</span>
+      <span class="meta"><strong>Lü</strong><span>ü is v. No explanation, no lyu.</span></span>
+    </div>
+    <div class="name-row">
+      <span class="idx">B</span>
+      <span class="form">zhy1</span>
+      <span class="meta"><strong>Zhī</strong><span>The apical vowel gets its own letter, y.</span></span>
+    </div>
+    <div class="name-row">
+      <span class="idx">C</span>
+      <span class="form">gi1</span>
+      <span class="meta"><strong>Jī</strong><span>No j/q/x. g/k/h read as palatals before i/v.</span></span>
+    </div>
+    <div class="name-row">
+      <span class="idx">D</span>
+      <span class="form">ma1</span>
+      <span class="meta"><strong>Mā</strong><span>Tone is part of the spelling, not a hat.</span></span>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>a <b>·</b> b <b>·</b> c <b>·</b> d <b>·</b> e <b>·</b> f <b>·</b> g <b>·</b> h <b>·</b> i <b>·</b> k <b>·</b> l <b>·</b> m <b>·</b> n <b>·</b> o <b>·</b> p <b>·</b> r <b>·</b> s <b>·</b> t <b>·</b> u <b>·</b> v <b>·</b> y <b>·</b> z <b>·</b> </span>
+    <span>a <b>·</b> b <b>·</b> c <b>·</b> d <b>·</b> e <b>·</b> f <b>·</b> g <b>·</b> h <b>·</b> i <b>·</b> k <b>·</b> l <b>·</b> m <b>·</b> n <b>·</b> o <b>·</b> p <b>·</b> r <b>·</b> s <b>·</b> t <b>·</b> u <b>·</b> v <b>·</b> y <b>·</b> z <b>·</b> </span>
+  </div>
+</div>
+
+<!-- ============================================================ 00 -->
+<section class="section" id="principles">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="num">00 / 07</div>
+      <div>
+        <h2 class="display display-lg title">Six principles.</h2>
+        <p class="lede muted" style="margin-top:1em;max-width:32em">Set the constraints first, then argue about spelling. Each one answers a compromise from 1958.</p>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="col-4 card reveal"><span class="idx">01</span><h3>Plain ASCII</h3><p>No ü, no tone marks, no diacritics. v is the vowel /y/. Passports, URLs, SQL and old terminals will not eat it.</p></div>
+      <div class="col-4 card reveal"><span class="idx">02</span><h3>No contractions</h3><p>iou, uei and uen are always written out. No iu/ui/un, and no “the main vowel disappears when you mark the tone”.</p></div>
+      <div class="col-4 card reveal"><span class="idx">03</span><h3>No rewrites</h3><p>au is not written ao; ung is not written ong; iung is not written iong; ien is not written ian. Spelling does not hide history.</p></div>
+      <div class="col-4 card reveal"><span class="idx">04</span><h3>No silent glides</h3><p>No y/w as orthographic initials. Zero-initial syllables are written with their vowel; an apostrophe separates syllables when needed: Xi'an → hi1'an1.</p></div>
+      <div class="col-4 card reveal"><span class="idx">05</span><h3>Apical vowel separate</h3><p>The final in zi/ci/si/zhi/chi/shi/ri is written y. zhi and ji no longer share an i.</p></div>
+      <div class="col-4 card reveal"><span class="idx">06</span><h3>Tone after the syllable</h3><p>1–4 for the four tones, 0 for neutral. Tone is part of the spelling, not an optional ornament.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ 01 -->
+<section class="section" id="changes">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="num">01 / 07</div>
+      <div>
+        <h2 class="display display-lg title">What changed.</h2>
+        <p class="lede muted" style="margin-top:1em;max-width:34em">Twelve rules covering the twelve most discussed positions in the current scheme.</p>
+      </div>
+    </div>
+
+    <div class="table-wrap reveal">
+      <table class="spec">
+        <thead><tr><th>Current pinyin</th><th>Pinglish</th><th>Rule</th><th>Examples</th></tr></thead>
+        <tbody>
+          <tr><td class="mono old">lü · nü</td><td class="mono new">lv · nv</td><td class="flag">ü → v</td><td>Lü lv3 · nü nv3</td></tr>
+          <tr><td class="mono old">jī · qī · xī</td><td class="mono new">gi1 · ki1 · hi1</td><td class="flag">j/q/x → g/k/h before i</td><td>jī gi1 · qī ki1 · xī hi1</td></tr>
+          <tr><td class="mono old">jū · qù · xū</td><td class="mono new">gv1 · kv4 · hv1</td><td class="flag">j/q/x + ü → g/k/h + v</td><td>jū gv1 · qù kv4 · xū hv1</td></tr>
+          <tr><td class="mono old">zhī · zī</td><td class="mono new">zhy1 · zy1</td><td class="flag">apical -i → y</td><td>zhī zhy1 · zī zy1</td></tr>
+          <tr><td class="mono old">gāo · xiǎo</td><td class="mono new">gau1 · hiau3</td><td class="flag">ao → au</td><td>gāo gau1 · xiǎo hiau3</td></tr>
+          <tr><td class="mono old">dōng · xiōng</td><td class="mono new">dung1 · hiung1</td><td class="flag">ong → ung; iong → iung</td><td>dōng dung1 · xiōng hiung1</td></tr>
+          <tr><td class="mono old">yān · biān</td><td class="mono new">ien1 · bien1</td><td class="flag">ian → ien</td><td>yān ien1 · biān bien1</td></tr>
+          <tr><td class="mono old">yuān · yūn</td><td class="mono new">ven1 · vn1</td><td class="flag">üan → ven; ün → vn</td><td>yuān ven1 · yūn vn1</td></tr>
+          <tr><td class="mono old">liù · guì · lùn</td><td class="mono new">liou4 · guei4 · luen4</td><td class="flag">iu/ui/un → iou/uei/uen</td><td>liù liou4 · guì guei4 · lùn luen4</td></tr>
+          <tr><td class="mono old">bō · pò · mō · fó</td><td class="mono new">buo1 · puo4 · muo1 · fuo2</td><td class="flag">b/p/m/f + o → uo</td><td>bō buo1 · pò puo4</td></tr>
+          <tr><td class="mono old">yī · wū · wǒ</td><td class="mono new">i1 · u1 · uo3</td><td class="flag">no y/w orthographic initials</td><td>yī i1 · wū u1 · wǒ uo3</td></tr>
+          <tr><td class="mono old">mā · má · mǎ · mà</td><td class="mono new">ma1 · ma2 · ma3 · ma4</td><td class="flag">tone → digit</td><td>mā ma1 · má ma2 · mǎ ma3 · mà ma4</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="legend"><span><i></i>red is Pinglish</span><span>grey strikethrough is current pinyin</span><span>all examples are complete syllables</span></div>
+  </div>
+</section>
+
+<!-- ============================================================ 02 -->
+<section class="section" id="tables">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="num">02 / 07</div>
+      <div>
+        <h2 class="display display-lg title">Initials and finals.</h2>
+        <p class="lede muted" style="margin-top:1em;max-width:34em">The complete inventory. Every row is an independent, pronounceable syllable.</p>
+      </div>
+    </div>
+
+    <h3 class="display display-sm reveal" style="margin-bottom:8px">Initials / 18 spellings for 21 pinyin initials</h3>
+    <p class="small muted reveal" style="margin-bottom:16px">g/k/h cover j/q/x before i/v, so 18 spellings do the work of 21 initials.</p>
+    <div class="table-wrap reveal" style="margin-bottom:clamp(40px,6vw,64px)">
+      <table class="spec spec--dense">
+        <thead><tr><th>Pinglish</th><th>Pinyin</th><th>IPA</th><th>Example</th><th>Pinglish</th><th>Pinyin</th><th>IPA</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td class="mono new">b</td><td class="mono">b</td><td class="mono">p</td><td>八 ba1</td><td class="mono new">zh</td><td class="mono">zh</td><td class="mono">tʂ</td><td>知 zhy1</td></tr>
+          <tr><td class="mono new">p</td><td class="mono">p</td><td class="mono">pʰ</td><td>怕 pa4</td><td class="mono new">ch</td><td class="mono">ch</td><td class="mono">tʂʰ</td><td>吃 chy1</td></tr>
+          <tr><td class="mono new">m</td><td class="mono">m</td><td class="mono">m</td><td>妈 ma1</td><td class="mono new">sh</td><td class="mono">sh</td><td class="mono">ʂ</td><td>诗 shy1</td></tr>
+          <tr><td class="mono new">f</td><td class="mono">f</td><td class="mono">f</td><td>发 fa1</td><td class="mono new">r</td><td class="mono">r</td><td class="mono">ɻ</td><td>日 ry4</td></tr>
+          <tr><td class="mono new">d</td><td class="mono">d</td><td class="mono">t</td><td>大 da4</td><td class="mono new">z</td><td class="mono">z</td><td class="mono">ts</td><td>资 zy1</td></tr>
+          <tr><td class="mono new">t</td><td class="mono">t</td><td class="mono">tʰ</td><td>他 ta1</td><td class="mono new">c</td><td class="mono">c</td><td class="mono">tsʰ</td><td>次 cy4</td></tr>
+          <tr><td class="mono new">n</td><td class="mono">n</td><td class="mono">n</td><td>你 ni3</td><td class="mono new">s</td><td class="mono">s</td><td class="mono">s</td><td>思 sy1</td></tr>
+          <tr><td class="mono new">l</td><td class="mono">l</td><td class="mono">l</td><td>来 lai2</td><td class="mono new">g</td><td class="mono">j</td><td class="mono">tɕ</td><td>鸡 gi1</td></tr>
+          <tr><td class="mono new">g</td><td class="mono">g</td><td class="mono">k</td><td>高 gau1</td><td class="mono new">k</td><td class="mono">q</td><td class="mono">tɕʰ</td><td>七 ki1</td></tr>
+          <tr><td class="mono new">k</td><td class="mono">k</td><td class="mono">kʰ</td><td>开 kai1</td><td class="mono new">h</td><td class="mono">x</td><td class="mono">ɕ</td><td>西 hi1</td></tr>
+          <tr><td class="mono new">h</td><td class="mono">h</td><td class="mono">x</td><td>好 hau3</td><td></td><td></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="display display-sm reveal" style="margin-bottom:16px">Simple and diphthong finals</h3>
+    <div class="table-wrap reveal" style="margin-bottom:clamp(40px,6vw,64px)">
+      <table class="spec spec--dense">
+        <thead><tr><th>Pinglish</th><th>Pinyin</th><th>Example</th><th>Pinglish</th><th>Pinyin</th><th>Example</th><th>Pinglish</th><th>Pinyin</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td class="mono new">a</td><td class="mono">a</td><td>啊 a1</td><td class="mono new">ia</td><td class="mono">ia</td><td>呀 ia1</td><td class="mono new">ua</td><td class="mono">ua</td><td>蛙 ua1</td></tr>
+          <tr><td class="mono new">o</td><td class="mono">o</td><td>哦 o4</td><td class="mono new">ie</td><td class="mono">ie</td><td>耶 ie1</td><td class="mono new">uo</td><td class="mono">uo</td><td>窝 uo1</td></tr>
+          <tr><td class="mono new">e</td><td class="mono">e</td><td>鹅 e2</td><td class="mono new">iau</td><td class="mono">iao</td><td>腰 iau1</td><td class="mono new">uai</td><td class="mono">uai</td><td>歪 uai1</td></tr>
+          <tr><td class="mono new">i</td><td class="mono">i</td><td>衣 i1</td><td class="mono new">iou</td><td class="mono">iou/iu</td><td>优 iou1</td><td class="mono new">uei</td><td class="mono">uei/ui</td><td>威 uei1</td></tr>
+          <tr><td class="mono new">u</td><td class="mono">u</td><td>乌 u1</td><td class="mono new">ve</td><td class="mono">üe</td><td>月 ve4</td><td class="mono new">er</td><td class="mono">er</td><td>儿 er2</td></tr>
+          <tr><td class="mono new">v</td><td class="mono">ü</td><td>迂 v1</td><td class="mono new">ai</td><td class="mono">ai</td><td>爱 ai4</td><td class="mono new">ei</td><td class="mono">ei</td><td>诶 ei1</td></tr>
+          <tr><td class="mono new">y</td><td class="mono">-i</td><td>资 zy1</td><td class="mono new">au</td><td class="mono">ao</td><td>熬 au2</td><td class="mono new">ou</td><td class="mono">ou</td><td>欧 ou1</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="display display-sm reveal" style="margin-bottom:16px">Nasal finals</h3>
+    <div class="table-wrap reveal">
+      <table class="spec spec--dense">
+        <thead><tr><th>Pinglish</th><th>Pinyin</th><th>Example</th><th>Pinglish</th><th>Pinyin</th><th>Example</th><th>Pinglish</th><th>Pinyin</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td class="mono new">an</td><td class="mono">an</td><td>安 an1</td><td class="mono new">ien</td><td class="mono">ian</td><td>烟 ien1</td><td class="mono new">uan</td><td class="mono">uan</td><td>弯 uan1</td></tr>
+          <tr><td class="mono new">en</td><td class="mono">en</td><td>恩 en1</td><td class="mono new">in</td><td class="mono">in</td><td>因 in1</td><td class="mono new">uen</td><td class="mono">uen/un</td><td>温 uen1</td></tr>
+          <tr><td class="mono new">ang</td><td class="mono">ang</td><td>昂 ang2</td><td class="mono new">iang</td><td class="mono">iang</td><td>央 iang1</td><td class="mono new">uang</td><td class="mono">uang</td><td>汪 uang1</td></tr>
+          <tr><td class="mono new">eng</td><td class="mono">eng</td><td>鞥 eng1</td><td class="mono new">ing</td><td class="mono">ing</td><td>英 ing1</td><td class="mono new">ueng</td><td class="mono">ueng</td><td>翁 ueng1</td></tr>
+          <tr><td class="mono new">ven</td><td class="mono">üan</td><td>冤 ven1</td><td class="mono new">vn</td><td class="mono">ün</td><td>晕 vn1</td><td class="mono new">ung</td><td class="mono">ong</td><td>东 dung1</td></tr>
+          <tr><td class="mono new">iung</td><td class="mono">iong</td><td>雍 iung1</td><td class="mono new">io</td><td class="mono">io</td><td>哟 io1</td><td class="mono new">eh</td><td class="mono">ê</td><td>欸 eh1</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="legend"><span>marginal syllables: m · n · ng · hm · hng · lo</span><span>all 407 Standard Chinese syllables: <a href="../assets/data/syllables.json" download>syllables.json</a></span></div>
+  </div>
+</section>
+
+<!-- ============================================================ 03 -->
+<section class="section" id="tones">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="num">03 / 07</div>
+      <div>
+        <h2 class="display display-lg title">Tone is a digit.</h2>
+        <p class="lede muted" style="margin-top:1em;max-width:34em">Not a mark above a vowel. Not a font. Not something an input method can swallow.</p>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="col-7 reveal">
+        <div class="table-wrap">
+          <table class="spec">
+            <thead><tr><th>Tone</th><th>Digit</th><th>Pitch</th><th>Example</th><th>Pinglish</th></tr></thead>
+            <tbody>
+              <tr><td>High level</td><td class="mono">1</td><td class="mono">55</td><td>妈 mā</td><td class="mono new">ma1</td></tr>
+              <tr><td>Rising</td><td class="mono">2</td><td class="mono">35</td><td>麻 má</td><td class="mono new">ma2</td></tr>
+              <tr><td>Low dipping</td><td class="mono">3</td><td class="mono">214</td><td>马 mǎ</td><td class="mono new">ma3</td></tr>
+              <tr><td>Falling</td><td class="mono">4</td><td class="mono">51</td><td>骂 mà</td><td class="mono new">ma4</td></tr>
+              <tr><td>Neutral</td><td class="mono">0</td><td class="mono">—</td><td>吗 ma</td><td class="mono new">ma0</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="col-5 reveal">
+        <div class="note-box">
+          <div class="label">Why digits</div>
+          <p style="font-size:.92rem;line-height:1.85;color:var(--ink-2)">Tone marks need a font, an input method and a typesetting system to cooperate. Digits do not. They sort, search, regex and fit in a URL, and they survived every terminal since 1985.</p>
+          <p style="margin-top:.8em;font-size:.92rem;line-height:1.85;color:var(--muted)">The cost: they are not beautiful. We accept the cost.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="split reveal" style="margin-top:clamp(40px,6vw,64px)">
+      <div>
+        <p class="eyebrow" style="margin-bottom:10px">Syllable boundaries</p>
+        <p class="body-lg">Zero-initial syllables are written with their vowel. When confusion is possible, use an apostrophe:</p>
+        <div class="specimen" style="margin-top:16px">
+          <div class="label"><span>Contrast</span><span>02</span></div>
+          <div class="text">
+            Xi'an <span class="tone">hi1'an1</span><br>
+            xian <span class="tone">hien1</span><br>
+            Tian'anmen <span class="tone">tien1'an1 men2</span><br>
+            fang'an <span class="tone">fang1'an4</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p class="eyebrow" style="margin-bottom:10px">Word spacing</p>
+        <p class="body-lg">Syllables inside a word may be joined; words are separated by spaces. Pinglish defines syllable boundaries, not a full orthography.</p>
+        <div class="specimen" style="margin-top:16px">
+          <div class="label"><span>Sentence</span><span>03</span></div>
+          <div class="text">
+            <span class="tone">uo3</span> <span class="tone">hi3</span> <span class="tone">huan0</span> <span class="tone">chy1</span> <span class="tone">bei3</span> <span class="tone">ging1</span> <span class="tone">kau3</span> <span class="tone">ia1</span>.<br>
+            <span style="font-family:var(--font-sans);font-size:.82rem;color:var(--muted)">I like eating Beijing roast duck.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ 04 -->
+<section class="section" id="sample">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="num">04 / 07</div>
+      <div>
+        <h2 class="display display-lg title">Read a passage.</h2>
+        <p class="lede muted" style="margin-top:1em">The North Wind and the Sun — the standard text in linguistics.</p>
+      </div>
+    </div>
+
+    <div class="split">
+      <div class="reveal">
+        <div class="compare-toggle" data-compare="#sample-text" role="group" aria-label="Switch text">
+          <button type="button" data-view="zh" aria-pressed="true">Hanzi</button>
+          <button type="button" data-view="py" aria-pressed="false">Pinyin</button>
+          <button type="button" data-view="pl" aria-pressed="false">Pinglish</button>
+        </div>
+        <div class="specimen" style="margin-top:16px;min-height:280px">
+          <div class="label"><span>The North Wind and the Sun / excerpt</span><span>04</span></div>
+          <div class="text" id="sample-text"
+            data-zh="有一次，北风和太阳正在争论谁比较有本事。他们正好看到一个路人走过，那个人穿着一件斗篷。"
+            data-py="Yǒu yī cì, běi fēng hé tài yáng zhèng zài zhēng lùn shéi bǐ jiào yǒu běn shì. Tā men zhèng hǎo kàn dào yī gè lù rén zǒu guò, nà gè rén chuān zhe yī jiàn dǒu péng."
+            data-pl="iou3 i1 cy4, bei3 fung1 he2 tai4 iang2 zheng4 zai4 zheng1 luen4 shei2 bi3 giau4 iou3 ben3 shy4. ta1 men0 zheng4 hau3 kan4 dau4 i1 ge4 lu4 ren2 zou3 guo4, na4 ge4 ren2 chuan1 zhe0 i1 gien4 dou3 peng2.">有一次，北风和太阳正在争论谁比较有本事。他们正好看到一个路人走过，那个人穿着一件斗篷。</div>
+        </div>
+      </div>
+      <div class="reveal">
+        <p class="eyebrow" style="margin-bottom:10px">Word by word</p>
+        <div class="table-wrap">
+          <table class="spec spec--dense">
+            <thead><tr><th>Hanzi</th><th>Pinyin</th><th>Pinglish</th></tr></thead>
+            <tbody>
+              <tr><td>北风</td><td class="mono">běi fēng</td><td class="mono new">bei3 fung1</td></tr>
+              <tr><td>太阳</td><td class="mono">tài yáng</td><td class="mono new">tai4 iang2</td></tr>
+              <tr><td>正在</td><td class="mono">zhèng zài</td><td class="mono new">zheng4 zai4</td></tr>
+              <tr><td>争论</td><td class="mono">zhēng lùn</td><td class="mono new">zheng1 luen4</td></tr>
+              <tr><td>谁</td><td class="mono">shéi</td><td class="mono new">shei2</td></tr>
+              <tr><td>比较</td><td class="mono">bǐ jiào</td><td class="mono new">bi3 giau4</td></tr>
+              <tr><td>本事</td><td class="mono">běn shì</td><td class="mono new">ben3 shy4</td></tr>
+              <tr><td>路人</td><td class="mono">lù rén</td><td class="mono new">lu4 ren2</td></tr>
+              <tr><td>斗篷</td><td class="mono">dǒu péng</td><td class="mono new">dou3 peng2</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="small muted" style="margin-top:12px">Note: 谁 has two readings, shéi and shuí; we use shéi. The sample uses citation tones; tone sandhi and neutral tone are not shown syllable by syllable. The converter follows dictionary and context.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ 05 -->
+<section class="section section--dark" id="tradeoffs">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="num">05 / 07</div>
+      <div>
+        <h2 class="display display-lg title">What it costs.</h2>
+        <p class="lede" style="margin-top:1em;color:rgba(242,238,227,.68);max-width:34em">There is no free redesign. Here is what this scheme explicitly gives up.</p>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="col-4 card reveal"><span class="idx">01</span><h3>g/k/h change reading</h3><p>Before i/v they are [tɕ/tɕʰ/ɕ]; elsewhere [k/kʰ/x]. One letter, two sounds. The payoff is deleting j/q/x entirely.</p></div>
+      <div class="col-4 card reveal"><span class="idx">02</span><h3>ien / ven spell the vowel</h3><p>They follow the actual [ɛ] and give up the morphological parallel with an/uan. This is a “sound first” choice.</p></div>
+      <div class="col-4 card reveal"><span class="idx">03</span><h3>v as a vowel</h3><p>In most languages v is a consonant; here it is /y/. The payoff is plain ASCII, one letter, no ü.</p></div>
+      <div class="col-4 card reveal"><span class="idx">04</span><h3>Tone digits</h3><p>Less beautiful than tone marks. But typeable, searchable, sortable, reversible, and never missing from a font.</p></div>
+      <div class="col-4 card reveal"><span class="idx">05</span><h3>y for the apical vowel</h3><p>It appears only after z/c/s/zh/ch/sh/r, so it cannot collide. For a beginner it is still a new rule.</p></div>
+      <div class="col-4 card reveal"><span class="idx">06</span><h3>What it does not solve</h3><p>Polyphony, tone sandhi, regional varieties, name conventions, adoption cost. Spelling is a small part of the language problem.</p></div>
+    </div>
+
+    <p class="body-lg reveal" style="margin-top:clamp(36px,5vw,56px);color:rgba(242,238,227,.78);max-width:46em"><strong style="color:var(--paper)">The most important point:</strong> nobody is asked to adopt this. Pinyin is already in several generations of muscle memory, and any replacement costs far more than its theoretical gain. Pinglish is a reference point: it shows where the current scheme made choices, and who is still paying for them.</p>
+  </div>
+</section>
+
+<!-- ============================================================ 06 -->
+<section class="section" id="lineage">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="num">06 / 07</div>
+      <div>
+        <h2 class="display display-lg title">What it borrows.</h2>
+        <p class="lede muted" style="margin-top:1em;max-width:34em">No romanization starts from zero. Neither does this one.</p>
+      </div>
+    </div>
+
+    <div class="timeline reveal">
+      <div class="timeline-item"><span class="year">1918</span><span class="what">Zhuyin fuhao</span><span class="why">Three-part syllables and independent finals. Pinglish inherits the idea that a final should stand on its own.</span></div>
+      <div class="timeline-item"><span class="year">1928</span><span class="what">Gwoyeu Romatzyh</span><span class="why">y for the apical vowel; tone shown in the spelling. Pinglish takes the first and gives up the second.</span></div>
+      <div class="timeline-item"><span class="year">1931</span><span class="what">Latinized New Writing (Northern)</span><span class="why">zh/ch/sh paired with z/c/s; au and ung. Pinglish keeps both.</span></div>
+      <div class="timeline-item"><span class="year">1958</span><span class="what">Hanyu Pinyin</span><span class="why">Initials, most finals, the four-tone frame. The starting point.</span></div>
+      <div class="timeline-item"><span class="year">2026</span><span class="what">Pinglish</span><span class="why">Puts reversibility, typeability and romanization ahead of historical habit.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ 07 -->
+<section class="section section--tight" id="download">
+  <div class="wrap">
+    <div class="split">
+      <div class="reveal">
+        <p class="eyebrow" style="margin-bottom:10px">Spec and implementation</p>
+        <h2 class="display display-md" style="margin-bottom:1em">Take it, change it,<br>or refute it.</h2>
+        <p class="body-lg">The spec, syllable table and conversion engine are on GitHub. Use them for an input method, a font, teaching material — or write a better scheme.</p>
+        <div class="hero-actions">
+          <a class="btn btn--primary" href="../assets/data/syllables.json" download>Download syllables.json</a>
+          <a class="btn" href="https://github.com/est/pinglish/blob/main/SPEC.md" target="_blank" rel="noopener">SPEC.md ↗</a>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="note-box">
+          <div class="label">Version</div>
+          <p class="mono" style="font-size:.86rem;line-height:1.9">PINGLISH v1.0<br>22 letters · 407 syllables<br>0 collisions · reversible<br>tone digits 1–4, 0<br>ASCII only</p>
+          <p class="small muted" style="margin-top:1em">If you find a counterexample, a collision or a better rule, open an issue. The value of a scheme is in being tested, not believed.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="wordmark" href="index.html" style="margin-bottom:12px"><span class="dot"></span>PINGLISH</a>
+        <p style="max-width:24em">A public design exercise about Hanyu Pinyin. Not an official standard, and not trying to become one.</p>
+        <p style="margin-top:1em;font-family:var(--font-mono);font-size:.62rem;letter-spacing:.06em">A PUBLIC DESIGN EXERCISE<br>1958 → 2026</p>
+      </div>
+      <div>
+        <h4>Read</h4>
+        <ul>
+          <li><a href="index.html#story">One name, four spellings</a></li>
+          <li><a href="index.html#compromise">Four impossibilities, 1958</a></li>
+          <li><a href="index.html#overload">One alphabet, three jobs</a></li>
+          <li><a href="archive.html">39 testimonies</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Scheme</h4>
+        <ul>
+          <li><a href="scheme.html">Pinglish v1.0</a></li>
+          <li><a href="scheme.html#tables">Initials / finals</a></li>
+          <li><a href="convert.html">Converter</a></li>
+          <li><a href="scheme.html#tradeoffs">Trade-offs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>More</h4>
+        <ul>
+          <li><a href="about.html">Method &amp; sources</a></li>
+          <li><a href="https://www.zhihu.com/question/23148320" target="_blank" rel="noopener">Original Zhihu thread ↗</a></li>
+          <li><a href="https://github.com/est/pinglish" target="_blank" rel="noopener">GitHub ↗</a></li>
+          <li><a href="about.html#contact">Contact / corrections</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> PINGLISH PROJECT · Text CC BY-NC-SA 4.0 · Code MIT</span>
+      <span>Pinyin belongs to everyone. The scheme belongs to 1958.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

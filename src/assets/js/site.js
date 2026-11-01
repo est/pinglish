@@ -4,6 +4,7 @@
 
   // ---------------------------------------------------------------- theme
   var root = document.documentElement;
+  var EN = (root.lang || "").toLowerCase().indexOf("en") === 0;
   var stored = null;
   try { stored = localStorage.getItem("pinglish-theme"); } catch (e) {}
   var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -13,8 +14,8 @@
     var btn = document.querySelector("[data-theme-toggle]");
     if (!btn) return;
     var dark = root.getAttribute("data-theme") === "dark";
-    btn.setAttribute("aria-label", dark ? "切换到浅色" : "切换到深色");
-    btn.setAttribute("title", dark ? "切换到浅色" : "切换到深色");
+    btn.setAttribute("aria-label", dark ? (EN ? "Switch to light" : "切换到浅色") : (EN ? "Switch to dark" : "切换到深色"));
+    btn.setAttribute("title", dark ? (EN ? "Switch to light" : "切换到浅色") : (EN ? "Switch to dark" : "切换到深色"));
     btn.innerHTML = dark
       ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M18.7 5.3l-1.4 1.4M6.7 17.3l-1.4 1.4"/></svg>'
       : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>';
@@ -84,7 +85,7 @@
     var done = function () {
       var old = btn.getAttribute("data-label") || btn.textContent;
       btn.setAttribute("data-label", old);
-      btn.textContent = "已复制";
+      btn.textContent = EN ? "Copied" : "已复制";
       setTimeout(function () { btn.textContent = old; }, 1400);
     };
     if (navigator.clipboard && navigator.clipboard.writeText) {

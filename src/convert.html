@@ -11,6 +11,8 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="alternate" hreflang="zh-CN" href="https://pinglish.est.im/convert.html">
+<link rel="alternate" hreflang="en" href="https://pinglish.est.im/en/convert.html">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -26,6 +28,7 @@
       <a href="about.html">关于</a>
     </nav>
     <div class="nav-tools">
+      <a class="lang-switch" href="en/convert.html" hreflang="en" lang="en">EN</a>
       <button class="icon-btn" data-theme-toggle type="button" aria-label="切换主题"></button>
     </div>
   </div>
@@ -47,7 +50,7 @@
       <p class="hero-sub">三种输入，一个输出。你可以从汉字开始，从现行拼音开始，也可以直接写 Pinglish 再倒推回去。</p>
     </div>
     <aside class="col-4 hero-aside">
-      <p class="note">中文分词与多音字由 pinyin-pro 处理。Pinglish 映射、声调数字、撇号分音节和反向还原由本站实现。所有转换都在浏览器里完成，不上传任何文本。</p>
+      <p class="note">汉语分词与多音字由 pinyin-pro 处理。Pinglish 映射、声调数字、撇号分音节和反向还原由本站实现。所有转换都在浏览器里完成，不上传任何文本。</p>
     </aside>
   </div>
 </section>
@@ -70,8 +73,8 @@
       <div class="converter-body">
         <div class="converter-row">
           <div>
-            <label for="conv-input" id="conv-label-in">中文 / 汉字</label>
-            <textarea id="conv-input" rows="4" spellcheck="false" placeholder="输入一句中文，例如：吕先生和薛小姐去西安"></textarea>
+            <label for="conv-input" id="conv-label-in">汉语 / 汉字</label>
+            <textarea id="conv-input" rows="4" spellcheck="false" placeholder="输入一句汉语，例如：吕先生和薛小姐去西安"></textarea>
           </div>
           <button class="converter-swap" type="button" id="conv-swap" aria-label="切换转换方向" title="切换转换方向">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 8h13l-3-3M20 16H7l3 3"/></svg>
@@ -195,7 +198,7 @@
 
     <div class="note-box reveal" style="margin-top:clamp(32px,5vw,56px)">
       <div class="label">技术说明</div>
-      <p class="small" style="line-height:1.85">中文转换使用 <a href="https://github.com/zh-lx/pinyin-pro" target="_blank" rel="noopener">pinyin-pro 3.29.5</a>（MIT），随站点本地打包，不请求外部 API。Pinglish 引擎（<code>assets/js/pinglish.js</code>）与音节表（<code>assets/data/syllables.json</code>）是本项目的一部分。若发现映射错误或未覆盖的音节，请开 issue。</p>
+      <p class="small" style="line-height:1.85">汉语转换使用 <a href="https://github.com/zh-lx/pinyin-pro" target="_blank" rel="noopener">pinyin-pro 3.29.5</a>（MIT），随站点本地打包，不请求外部 API。Pinglish 引擎（<code>assets/js/pinglish.js</code>）与音节表（<code>assets/data/syllables.json</code>）是本项目的一部分。若发现映射错误或未覆盖的音节，请开 issue。</p>
     </div>
   </div>
 </section>

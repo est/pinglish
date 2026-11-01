@@ -5,7 +5,7 @@
  *   node scripts/test-pinglish.mjs
  *
  * Exits 0 on success. No test framework, no dependencies beyond the vendored
- * pinyin-pro build in docs/assets/vendor/pinyin-pro.js.
+ * pinyin-pro build in src/assets/vendor/pinyin-pro.js.
  */
 
 import assert from 'node:assert/strict';
@@ -18,12 +18,12 @@ const require = createRequire(import.meta.url);
 const here = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(here, '..');
 
-const Pinglish = require(path.join(root, 'docs/assets/js/pinglish.js'));
-const pinyinPro = require(path.join(root, 'docs/assets/vendor/pinyin-pro.js'));
+const Pinglish = require(path.join(root, 'src/assets/js/pinglish.js'));
+const pinyinPro = require(path.join(root, 'src/assets/vendor/pinyin-pro.js'));
 globalThis.pinyinPro = pinyinPro;
 
 const table = JSON.parse(
-  fs.readFileSync(path.join(root, 'docs/assets/data/syllables.json'), 'utf8')
+  fs.readFileSync(path.join(root, 'src/assets/data/syllables.json'), 'utf8')
 );
 
 let checks = 0;

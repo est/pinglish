@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — PINGLISH</title>
+<meta name="description" content="The method, sources, copyright and disclaimer behind PINGLISH: a public design exercise about Hanyu Pinyin.">
+<meta name="theme-color" content="#f2eee3">
+<meta property="og:title" content="About PINGLISH">
+<meta property="og:description" content="Method, sources, fact-check and disclaimer for a public design exercise about Hanyu Pinyin.">
+
+<meta property="og:image" content="https://pinglish.est.im/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" hreflang="zh-CN" href="https://pinglish.est.im/about.html">
+<link rel="alternate" hreflang="en" href="https://pinglish.est.im/en/about.html">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="wordmark" href="index.html"><span class="dot"></span>PINGLISH <small>another possible pinyin</small></a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="index.html">Story</a>
+      <a href="scheme.html">Scheme</a>
+      <a href="convert.html">Converter</a>
+      <a href="archive.html">Archive</a>
+      <a href="about.html">About</a>
+    </nav>
+    <div class="nav-tools">
+      <a class="lang-switch" href="../about.html" hreflang="zh-CN" lang="zh-CN">汉语</a>
+      <button class="icon-btn" data-theme-toggle type="button" aria-label="Switch theme"></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="hero wrap" style="padding-bottom:clamp(36px,5vw,64px)">
+  <div class="hero-top">
+    <span class="kicker">About</span>
+    <span class="eyebrow">Method · sources · disclaimer</span>
+  </div>
+  <div class="grid">
+    <div class="col-8">
+      <h1 class="display display-xl hero-title" style="max-width:12em">
+        <span class="line">About this</span>
+        <span class="line">project.</span>
+      </h1>
+      <p class="hero-sub">It started with one Zhihu question and became a scheme, a converter and an archive. Here is where it came from, and what it is not.</p>
+    </div>
+    <aside class="col-4 hero-aside">
+      <p class="note">If you read one paragraph: this is not a campaign to abolish pinyin, and it is not a linguistics paper. It is a public design exercise and a dossier about institutional cost.</p>
+    </aside>
+  </div>
+</section>
+
+<section class="section" id="what">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="num">01 / 06</div>
+      <div>
+        <h2 class="display display-lg title">What it is.</h2>
+      </div>
+    </div>
+
+    <div class="split">
+      <div class="reveal stack" style="--stack:1.2em">
+        <p class="body-lg">What are the obvious flaws in the Hanyu Pinyin scheme? That is a question on Zhihu. Answers have kept arriving since 2015. We turned the saved 39 answers into a searchable archive, and drew out three recurring themes:</p>
+        <p class="body-lg"><strong>Names</strong>: ü has three identities across passports, input methods and banking systems.<br><strong>Phonology</strong>: i, e, o, ian and ong do not map one-to-one onto sounds.<br><strong>Institutions</strong>: a system designed for 1958 was asked to do the work of 2026.</p>
+        <p class="body-lg">Then we did two things: turned the discussion into a readable narrative, and answered the question “if we started over, could it be better?”</p>
+      </div>
+      <div class="reveal">
+        <div class="note-box">
+          <div class="label">Three numbers</div>
+          <p class="serif" style="font-size:clamp(1.6rem,3vw,2.4rem);line-height:1.35">39 answers<br>13 images<br>1 alternative scheme</p>
+          <p class="small muted" style="margin-top:1em">Upvote counts and dates are a snapshot. Images come from the original answers and remain the property of their authors.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="method">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="num">02 / 06</div>
+      <div>
+        <h2 class="display display-lg title">Method.</h2>
+        <p class="lede muted" style="margin-top:1em;max-width:34em">Facts, opinions and design are kept apart.</p>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="col-4 card reveal">
+        <span class="idx">STEP 01</span>
+        <h3>Archive</h3>
+        <p>Keep the text, author, upvotes, date, original link and images of all 39 answers. Do not edit the originals; only add summaries and filters at the display layer.</p>
+      </div>
+      <div class="col-4 card reveal">
+        <span class="idx">STEP 02</span>
+        <h3>Separate</h3>
+        <p>Distinguish factual claims, personal experience, normative arguments and concrete proposals. The opinions in the archive belong to their authors, not to this site.</p>
+      </div>
+      <div class="col-4 card reveal">
+        <span class="idx">STEP 03</span>
+        <h3>Design</h3>
+        <p>Turn the constraints into a testable alternative: rules, a syllable table, a converter and counterexample tests.</p>
+      </div>
+    </div>
+
+    <div class="reveal" style="margin-top:clamp(32px,5vw,56px)">
+      <p class="body-lg" style="max-width:46em">The alternative is called <strong>Pinglish</strong>. Its goal is not “more correct”, but “more coherent under a different set of constraints”: plain ASCII, no contractions, no rewrites, reversible, tone as digits. The full spec is on the <a href="scheme.html">scheme page</a>; the implementation and tests are on <a href="https://github.com/est/pinglish" target="_blank" rel="noopener">GitHub</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="sources">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="num">03 / 06</div>
+      <div>
+        <h2 class="display display-lg title">Sources.</h2>
+      </div>
+    </div>
+
+    <div class="table-wrap reveal">
+      <table class="spec">
+        <thead><tr><th>Material</th><th>Use</th><th>Link</th></tr></thead>
+        <tbody>
+          <tr><td>Zhihu question 23148320</td><td>The 39 original answers</td><td><a href="https://www.zhihu.com/question/23148320" target="_blank" rel="noopener">zhihu.com ↗</a></td></tr>
+          <tr><td>Hanyu Pinyin Scheme (1958)</td><td>The baseline text</td><td><a href="http://www.moe.gov.cn/" target="_blank" rel="noopener">Ministry of Education ↗</a></td></tr>
+          <tr><td>Discussion volumes on the 1956 draft (1957–58)</td><td>The original debates and alternatives</td><td>Archive answer 24</td></tr>
+          <tr><td>Zhou Youguang, An Outline of the Reform of Hanzi (1961)</td><td>Design notes on ian / üan and others</td><td>Archive answers 30, 38</td></tr>
+          <tr><td>Gwoyeu Romatzyh (1928)</td><td>y for the apical vowel; tone in spelling</td><td>Historical scheme</td></tr>
+          <tr><td>Latinized New Writing, Northern (1931)</td><td>zh/ch/sh paired with z/c/s</td><td>Historical scheme</td></tr>
+          <tr><td>pinyin-pro 3.29.5</td><td>Segmentation and polyphony</td><td><a href="https://github.com/zh-lx/pinyin-pro" target="_blank" rel="noopener">GitHub ↗</a> · MIT</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="factcheck">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="num">04 / 06</div>
+      <div>
+        <h2 class="display display-lg title">Fact-check.</h2>
+        <p class="lede muted" style="margin-top:1em;max-width:34em">Some claims in the archive need a patch. These are the ones we checked before launch.</p>
+      </div>
+    </div>
+
+    <div class="table-wrap reveal" id="factcheck-table">
+      <table class="spec">
+        <thead><tr><th>Common claim</th><th>Verdict</th><th>More accurate wording</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>ü is “a German letter”, not an English letter.</td>
+            <td><span class="tag">False</span></td>
+            <td>ü is the Latin letter u plus a diaeresis. German, Turkish, Hungarian and Estonian use it as a letter; French, Spanish and older Portuguese use it to mark a separate vowel. Hanyu Pinyin borrows it for [y]; it is not “a German letter stuffed into an English alphabet”.</td>
+          </tr>
+          <tr>
+            <td>The passport spelling of Lü changed from LU to LYU in 2014/2015.</td>
+            <td><span class="tag">Needs correction</span></td>
+            <td>A 2012 public-security notice set Ü→YU (LYU/NYU); a 2021 National Immigration Administration announcement is the current basis and also sets LÜE/NÜE→LUE/NUE. Older passports usually show LU; LV is a keyboard/social spelling, not the official passport form.</td>
+          </tr>
+          <tr>
+            <td>Using v for ü or omitting tone marks is “illegal”.</td>
+            <td><span class="tag">Depends</span></td>
+            <td>v is a keyboard representation allowed by GF 3006-2001, not a formal spelling. Tone marks may be omitted in passports, proper names and indexes. Calling every informal use “illegal” conflates formal text with keyboard input.</td>
+          </tr>
+          <tr>
+            <td>The Shandong Education Department’s “2012 revision” is an official new scheme.</td>
+            <td><span class="tag">False</span></td>
+            <td>The document has no issuing body, document number or seal; it is a teacher’s document that circulated online and was reposted. The current national scheme remains the 1958 Hanyu Pinyin Scheme.</td>
+          </tr>
+          <tr>
+            <td>The 1958 scheme was meant to replace Hanzi.</td>
+            <td><span class="tag">Needs qualification</span></td>
+            <td>The scheme was approved by the First National People’s Congress on 11 February 1958. Zhou Enlai stated in January that it was not an alphabetic writing system intended to replace Hanzi. Some advocates did have a longer romanization project; in 1986 that project was formally stopped.</td>
+          </tr>
+          <tr>
+            <td>LYU is Cantonese romanization.</td>
+            <td><span class="tag">False</span></td>
+            <td>Cantonese 呂 is read leoi5 and is often romanized Lui. LYU comes from GB/T 28039 and the passport Ü→YU rule, not from Cantonese.</td>
+          </tr>
+          <tr>
+            <td>Bing Dwen Dwen / Shuey Rhon Rhon prove that pinyin has been abandoned.</td>
+            <td><span class="tag">Overstated</span></td>
+            <td>These are the Beijing Winter Olympics organisers’ official advertising transliterations, designed for English pronunciation and brand recognition, not standard pinyin. Chinese names, place names and the legal status of pinyin are unchanged.</td>
+          </tr>
+          <tr>
+            <td>Pinglish is a “better pinyin”.</td>
+            <td><span class="tag">No</span></td>
+            <td>It is a coherent design exercise under a specific set of constraints. It has not gone through language planning, education, publishing or standardisation. Its value is as a reference point, not a replacement.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note-box reveal" style="margin-top:16px">
+      <div class="label">Sources</div>
+      <p class="small" style="line-height:1.9">
+        1958 resolution: <a href="https://zh.wikisource.org/wiki/第一届全国人民代表大会第五次会议关于汉语拼音方案的决议" target="_blank" rel="noopener">NPC resolution ↗</a> ·
+        Zhou Enlai, 1958: <a href="https://www.marxists.org/chinese/zhouenlai/129.htm" target="_blank" rel="noopener">The Current Tasks of Writing Reform ↗</a> ·
+        Passport rules: <a href="https://ga.sz.gov.cn/ZWGK/QT/GSGG/content/post_9341336.html" target="_blank" rel="noopener">2021 announcement ↗</a> ·
+        GB/T 28039-2011: <a href="https://www.babelstone.co.uk/CJK/GBT28039-2011.html" target="_blank" rel="noopener">full text ↗</a> ·
+        GF 3006-2001: <a href="https://zh.wikisource.org/wiki/GF_3006-2001_汉语拼音方案的通用键盘表示规范" target="_blank" rel="noopener">keyboard representation ↗</a> ·
+        ISO 7098:2015: <a href="https://www.iso.org/standard/61420.html" target="_blank" rel="noopener">ISO ↗</a> ·
+        Full research notes: <a href="https://github.com/est/pinglish/blob/main/research/factcheck.md" target="_blank" rel="noopener">research/factcheck.md ↗</a>
+      </p>
+      <p class="small muted" style="margin-top:.8em">If you find a factual error, open an issue with a source at <a href="https://github.com/est/pinglish/issues" target="_blank" rel="noopener">GitHub Issues</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--dark" id="disclaimer">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="num">05 / 06</div>
+      <div>
+        <h2 class="display display-lg title">What it is not.</h2>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="col-6 reveal">
+        <p class="body-lg" style="color:rgba(242,238,227,.78)">It is not an official proposal, a language-planning recommendation, a rejection of current pinyin, or a show of disrespect to the designers of 1958. The more carefully you read the original debates, the more reasonable their choices look in context.</p>
+        <p class="body-lg" style="margin-top:1em;color:rgba(242,238,227,.78)">It is also not “an easier pinyin for foreigners”. No romanization will make an English speaker read Chinese names correctly on sight. Pinglish aims at internal consistency, reversibility and typeability, not cross-language spelling intuition.</p>
+      </div>
+      <div class="col-6 reveal">
+        <div class="note-box" style="background:rgba(242,238,227,.06);border-color:rgba(242,238,227,.25)">
+          <div class="label" style="color:var(--accent)">One sentence</div>
+          <p class="serif" style="font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.5;color:var(--paper)">Pinyin does not need to be replaced.<br>It needs to be understood.</p>
+          <p style="margin-top:1em;font-size:.9rem;line-height:1.8;color:rgba(242,238,227,.6)">Understand why it looks the way it does, where it charges a cost, and what historical conditions produced each compromise. Then you can keep using it, or design something better.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="credits">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="num">06 / 06</div>
+      <div>
+        <h2 class="display display-lg title">Credits &amp; rights.</h2>
+      </div>
+    </div>
+
+    <div class="split">
+      <div class="reveal stack" style="--stack:1.1em">
+        <p class="body-lg"><strong>Zhihu answers</strong>: copyright remains with their authors. They are quoted here for commentary, research and archiving, with attribution, original text and links. If you are an author and would prefer not to be included, contact us via GitHub Issues and we will remove the entry.</p>
+        <p class="body-lg"><strong>Images</strong>: screenshots and scans from the original answers remain the property of their authors or publishers; they are used for commentary and illustration.</p>
+        <p class="body-lg"><strong>Site text</strong>: CC BY-NC-SA 4.0, except quotations. <strong>Code</strong>: MIT. The Pinglish spec and syllable table may be reused for teaching, research and further development with attribution.</p>
+        <p class="body-lg"><strong>Third party</strong>: pinyin-pro (MIT) provides Hanzi-to-pinyin conversion. The site calls no external API and does not upload user input.</p>
+      </div>
+      <div class="reveal" id="contact">
+        <div class="note-box">
+          <div class="label">Contact / corrections / citation</div>
+          <p class="small" style="line-height:1.9">
+            GitHub Issues: <a href="https://github.com/est/pinglish/issues" target="_blank" rel="noopener">est/pinglish/issues ↗</a><br>
+            Repository: <a href="https://github.com/est/pinglish" target="_blank" rel="noopener">github.com/est/pinglish ↗</a><br>
+            Site: <a href="https://pinglish.est.im">pinglish.est.im</a>
+          </p>
+          <p class="small muted" style="margin-top:1em;line-height:1.9">Citation:<br>PINGLISH Project, <em>What if Hanyu Pinyin were designed today?</em>, 2026.<br>pinglish.est.im</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline reveal" style="margin-top:clamp(40px,6vw,64px)">
+      <div class="timeline-item"><span class="year">2026-11</span><span class="what">v1.0 online</span><span class="why">Narrative, scheme, converter, 39-answer archive, fact-check.</span></div>
+      <div class="timeline-item"><span class="year">Next</span><span class="what">Next version</span><span class="why">More historical schemes, regional varieties, and corrections.</span></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="wordmark" href="index.html" style="margin-bottom:12px"><span class="dot"></span>PINGLISH</a>
+        <p style="max-width:24em">A public design exercise about Hanyu Pinyin. Not an official standard, and not trying to become one.</p>
+        <p style="margin-top:1em;font-family:var(--font-mono);font-size:.62rem;letter-spacing:.06em">A PUBLIC DESIGN EXERCISE<br>1958 → 2026</p>
+      </div>
+      <div>
+        <h4>Read</h4>
+        <ul>
+          <li><a href="index.html#story">One name, four spellings</a></li>
+          <li><a href="index.html#compromise">Four impossibilities, 1958</a></li>
+          <li><a href="index.html#overload">One alphabet, three jobs</a></li>
+          <li><a href="archive.html">39 testimonies</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Scheme</h4>
+        <ul>
+          <li><a href="scheme.html">Pinglish v1.0</a></li>
+          <li><a href="scheme.html#tables">Initials / finals</a></li>
+          <li><a href="convert.html">Converter</a></li>
+          <li><a href="scheme.html#tradeoffs">Trade-offs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>More</h4>
+        <ul>
+          <li><a href="about.html">Method &amp; sources</a></li>
+          <li><a href="https://www.zhihu.com/question/23148320" target="_blank" rel="noopener">Original Zhihu thread ↗</a></li>
+          <li><a href="https://github.com/est/pinglish" target="_blank" rel="noopener">GitHub ↗</a></li>
+          <li><a href="about.html#contact">Contact / corrections</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> PINGLISH PROJECT · Text CC BY-NC-SA 4.0 · Code MIT</span>
+      <span>Pinyin belongs to everyone. The scheme belongs to 1958.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

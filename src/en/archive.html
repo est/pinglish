@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Archive — 39 testimonies · PINGLISH</title>
+<meta name="description" content="39 answers about Hanyu Pinyin: names, phonology, history, input efficiency and reform proposals. English summaries, filters, and links to the full Chinese originals.">
+<meta name="theme-color" content="#f2eee3">
+<meta property="og:title" content="39 testimonies — PINGLISH">
+<meta property="og:description" content="39 answers about Hanyu Pinyin: names, phonology, history, input efficiency and reform proposals.">
+
+<meta property="og:image" content="https://pinglish.est.im/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" hreflang="zh-CN" href="https://pinglish.est.im/archive.html">
+<link rel="alternate" hreflang="en" href="https://pinglish.est.im/en/archive.html">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="wordmark" href="index.html"><span class="dot"></span>PINGLISH <small>another possible pinyin</small></a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="index.html">Story</a>
+      <a href="scheme.html">Scheme</a>
+      <a href="convert.html">Converter</a>
+      <a href="archive.html">Archive</a>
+      <a href="about.html">About</a>
+    </nav>
+    <div class="nav-tools">
+      <a class="lang-switch" href="../archive.html" hreflang="zh-CN" lang="zh-CN">汉语</a>
+      <button class="icon-btn" data-theme-toggle type="button" aria-label="Switch theme"></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="hero wrap" style="padding-bottom:clamp(36px,5vw,64px)">
+  <div class="hero-top">
+    <span class="kicker">The archive</span>
+    <span class="eyebrow">39 answers · 2015 → 2026 · one question</span>
+  </div>
+  <div class="grid">
+    <div class="col-8">
+      <h1 class="display display-xl hero-title" style="max-width:12em">
+        <span class="line">39</span>
+        <span class="line">testimonies.</span>
+      </h1>
+      <p class="hero-sub">Some lost a surname. Some lost a tone. Some just wanted to prove the scheme was right. Filter by position, sort by upvotes or date, or pick one at random.</p>
+    </div>
+    <aside class="col-4 hero-aside">
+      <p class="note">The full answers are in Chinese. This English edition provides summaries and translated excerpts; each card links to the complete text in the Chinese archive and to the original on Zhihu.</p>
+    </aside>
+  </div>
+</section>
+
+<section class="section section--flush" style="padding-top:0">
+  <div class="wrap">
+
+    <div class="stats reveal" style="margin-bottom:clamp(28px,4vw,48px)">
+      <div class="stat"><div class="num" data-stat="count">39</div><div class="label">answers</div></div>
+      <div class="stat"><div class="num" data-stat="votes">4,172</div><div class="label">upvotes</div></div>
+      <div class="stat"><div class="num" data-stat="years">11</div><div class="label">years</div></div>
+      <div class="stat"><div class="num" data-stat="stances">5</div><div class="label">positions</div></div>
+    </div>
+
+    <div class="archive-toolbar">
+      <div class="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+        <input id="archive-search" type="search" placeholder="Search author, keyword, sentence…" autocomplete="off" aria-label="Search the archive">
+      </div>
+      <div class="chips" id="archive-chips" role="group" aria-label="Filter by position">
+        <button class="chip" type="button" data-stance="all" aria-pressed="true">All <span data-count="all">39</span></button>
+        <button class="chip" type="button" data-stance="testimony" aria-pressed="false">The cost of a name <span data-count="testimony">5</span></button>
+        <button class="chip" type="button" data-stance="reform" aria-pressed="false">Reform proposals <span data-count="reform">16</span></button>
+        <button class="chip" type="button" data-stance="defend" aria-pressed="false">Defend / rename <span data-count="defend">6</span></button>
+        <button class="chip" type="button" data-stance="history" aria-pressed="false">History &amp; institutions <span data-count="history">8</span></button>
+        <button class="chip" type="button" data-stance="detail" aria-pressed="false">Details &amp; teaching <span data-count="detail">4</span></button>
+      </div>
+      <div style="display:flex;gap:8px;align-items:center">
+        <select id="archive-sort" class="select" aria-label="Sort order">
+          <option value="votes">By upvotes</option>
+          <option value="date-desc">Newest first</option>
+          <option value="date-asc">Oldest first</option>
+        </select>
+        <button class="chip" type="button" id="archive-random">Pick one</button>
+      </div>
+      <div class="archive-count" id="archive-count">Loading…</div>
+    </div>
+
+    <div class="archive-grid" id="archive-grid" aria-live="polite"></div>
+    <div class="empty-state" id="archive-empty" hidden>No matching answer. Try another keyword, or choose “All”.</div>
+
+    <noscript>
+      <div class="empty-state" style="margin-top:24px">The archive needs JavaScript to filter and render. You can also read the source digest at <code>docs/23148320.md</code>.</div>
+    </noscript>
+
+    <div class="note-box" style="margin-top:clamp(40px,6vw,64px)">
+      <div class="label">About the originals</div>
+      <p class="small" style="line-height:1.85">All answers remain the property of their authors. Quotations retain the authors’ original wording. The English summaries are editorial translations, not official translations; the Chinese originals are linked on every card. Upvote counts and dates are a snapshot from the saved page and may have changed. If you are an author and would prefer not to be included, please contact us and we will remove the entry.</p>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="wordmark" href="index.html" style="margin-bottom:12px"><span class="dot"></span>PINGLISH</a>
+        <p style="max-width:24em">A public design exercise about Hanyu Pinyin. Not an official standard, and not trying to become one.</p>
+        <p style="margin-top:1em;font-family:var(--font-mono);font-size:.62rem;letter-spacing:.06em">A PUBLIC DESIGN EXERCISE<br>1958 → 2026</p>
+      </div>
+      <div>
+        <h4>Read</h4>
+        <ul>
+          <li><a href="index.html#story">One name, four spellings</a></li>
+          <li><a href="index.html#compromise">Four impossibilities, 1958</a></li>
+          <li><a href="index.html#overload">One alphabet, three jobs</a></li>
+          <li><a href="archive.html">39 testimonies</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Scheme</h4>
+        <ul>
+          <li><a href="scheme.html">Pinglish v1.0</a></li>
+          <li><a href="scheme.html#tables">Initials / finals</a></li>
+          <li><a href="convert.html">Converter</a></li>
+          <li><a href="scheme.html#tradeoffs">Trade-offs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>More</h4>
+        <ul>
+          <li><a href="about.html">Method &amp; sources</a></li>
+          <li><a href="https://www.zhihu.com/question/23148320" target="_blank" rel="noopener">Original Zhihu thread ↗</a></li>
+          <li><a href="https://github.com/est/pinglish" target="_blank" rel="noopener">GitHub ↗</a></li>
+          <li><a href="about.html#contact">Contact / corrections</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> PINGLISH PROJECT · Text CC BY-NC-SA 4.0 · Code MIT</span>
+      <span>Pinyin belongs to everyone. The scheme belongs to 1958.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/site.js"></script>
+<script src="../assets/js/archive-en.js"></script>
+</body>
+</html>

@@ -1,5 +1,8 @@
 .DS_Store
 .tmp/
+.tmp-shots/
+.tmp-server.log
+*.log
 scripts/node_modules/
 scripts/.tmp/
 docs/23148320.html
