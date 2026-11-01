@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>转换器 — PINGLISH</title>
+<meta name="description" content="在汉字、现行拼音和 Pinglish 之间互相转换。支持声调数字、声调符号、撇号分音节和逐音节对照。">
+<meta name="theme-color" content="#f2eee3">
+<meta property="og:image" content="https://pinglish.est.im/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="wordmark" href="index.html"><span class="dot"></span>PINGLISH <small>拼音的另一种可能</small></a>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="index.html">故事</a>
+      <a href="scheme.html">方案</a>
+      <a href="convert.html">转换器</a>
+      <a href="archive.html">档案</a>
+      <a href="about.html">关于</a>
+    </nav>
+    <div class="nav-tools">
+      <button class="icon-btn" data-theme-toggle type="button" aria-label="切换主题"></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="hero wrap" style="padding-bottom:clamp(36px,5vw,64px)">
+  <div class="hero-top">
+    <span class="kicker">Converter</span>
+    <span class="eyebrow">汉字 ⇄ 拼音 ⇄ PINGLISH</span>
+  </div>
+  <div class="grid">
+    <div class="col-8">
+      <h1 class="display display-xl hero-title" style="max-width:13em">
+        <span class="line">把一句话，</span>
+        <span class="line">翻译成 2026。</span>
+      </h1>
+      <p class="hero-sub">三种输入，一个输出。你可以从汉字开始，从现行拼音开始，也可以直接写 Pinglish 再倒推回去。</p>
+    </div>
+    <aside class="col-4 hero-aside">
+      <p class="note">中文分词与多音字由 pinyin-pro 处理。Pinglish 映射、声调数字、撇号分音节和反向还原由本站实现。所有转换都在浏览器里完成，不上传任何文本。</p>
+    </aside>
+  </div>
+</section>
+
+<section class="section section--flush" style="padding-top:0">
+  <div class="wrap">
+    <div class="converter" id="converter-app">
+      <div class="converter-top">
+        <span class="dots"><i></i><i></i><i></i></span>
+        <span>PINGLISH CONVERTER / v1.0</span>
+        <span id="conv-status" class="muted">READY</span>
+      </div>
+
+      <div class="converter-tabs" role="tablist" aria-label="转换方向">
+        <button class="converter-tab" type="button" data-mode="zh" role="tab" aria-selected="true">汉字 → Pinglish</button>
+        <button class="converter-tab" type="button" data-mode="py" role="tab" aria-selected="false">拼音 → Pinglish</button>
+        <button class="converter-tab" type="button" data-mode="pl" role="tab" aria-selected="false">Pinglish → 拼音</button>
+      </div>
+
+      <div class="converter-body">
+        <div class="converter-row">
+          <div>
+            <label for="conv-input" id="conv-label-in">中文 / 汉字</label>
+            <textarea id="conv-input" rows="4" spellcheck="false" placeholder="输入一句中文，例如：吕先生和薛小姐去西安"></textarea>
+          </div>
+          <button class="converter-swap" type="button" id="conv-swap" aria-label="切换转换方向" title="切换转换方向">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 8h13l-3-3M20 16H7l3 3"/></svg>
+          </button>
+          <div>
+            <label for="conv-output" id="conv-label-out">Pinglish</label>
+            <div class="converter-output" id="conv-output" aria-live="polite"><span class="placeholder">输出会出现在这里。</span></div>
+          </div>
+        </div>
+
+        <div class="converter-actions">
+          <button class="btn btn--sm btn--primary" type="button" id="conv-run">转换</button>
+          <button class="btn btn--sm" type="button" data-example>换一个例子</button>
+          <button class="btn btn--sm btn--ghost" type="button" id="conv-copy" data-copy="#conv-output">复制结果</button>
+          <label class="small muted" style="display:inline-flex;align-items:center;gap:.5em;margin-left:4px">
+            <input type="checkbox" id="conv-tone" checked> 显示声调符号
+          </label>
+        </div>
+
+        <p class="converter-hint">
+          声调数字：<code>1</code> 阴平、<code>2</code> 阳平、<code>3</code> 上声、<code>4</code> 去声、<code>0</code> 轻声。
+          撇号只用于分音节：<code>hi1'an1</code>（西安）对 <code>hien1</code>（先）。
+        </p>
+
+        <div class="breakdown" id="conv-breakdown"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="how">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="num">01 / 03</div>
+      <div>
+        <h2 class="display display-lg title">三种模式。</h2>
+        <p class="lede muted" style="margin-top:1em;max-width:34em">同一套映射，三个方向。反向是可逆的，不是猜的。</p>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="col-4 card reveal">
+        <span class="idx">MODE 01</span>
+        <h3>汉字 → Pinglish</h3>
+        <p>先用 pinyin-pro 做分词和多音字判断，再把每个音节映射成 Pinglish。例：薛 → hve1。</p>
+      </div>
+      <div class="col-4 card reveal">
+        <span class="idx">MODE 02</span>
+        <h3>拼音 → Pinglish</h3>
+        <p>接受带调号或带数字的拼音。ü、iu/ui/un、j/q/x、零声母都会按规则重写。例：lü3 → lv3。</p>
+      </div>
+      <div class="col-4 card reveal">
+        <span class="idx">MODE 03</span>
+        <h3>Pinglish → 拼音</h3>
+        <p>用 407 个音节的零碰撞映射做反向查表。可以输出数字声调，也可以输出带调号的拼音。例：gvn1 → jūn。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="names">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="num">02 / 03</div>
+      <div>
+        <h2 class="display display-lg title">姓名实验室。</h2>
+        <p class="lede muted" style="margin-top:1em;max-width:34em">同一个字，在字典、输入法、护照和新方案里，分别长什么样。</p>
+      </div>
+    </div>
+
+    <div class="table-wrap reveal">
+      <table class="spec">
+        <thead><tr><th>汉字</th><th>现行拼音</th><th>输入法</th><th>护照 / 转写</th><th>Pinglish</th><th>备注</th></tr></thead>
+        <tbody>
+          <tr><td class="serif" style="font-size:1.2rem">吕</td><td class="mono">lǚ</td><td class="mono">lv</td><td class="mono">lyu</td><td class="mono new">lv3</td><td class="flag">ü 在键盘上的三重身份</td></tr>
+          <tr><td class="serif" style="font-size:1.2rem">女</td><td class="mono">nǚ</td><td class="mono">nv</td><td class="mono">nyu</td><td class="mono new">nv3</td><td class="flag">同上</td></tr>
+          <tr><td class="serif" style="font-size:1.2rem">薛</td><td class="mono">xuē</td><td class="mono">xue</td><td class="mono">hsueh / xue</td><td class="mono new">hve1</td><td class="flag">x 在英语里没有稳定读法</td></tr>
+          <tr><td class="serif" style="font-size:1.2rem">西安</td><td class="mono">Xī'ān</td><td class="mono">xian / xi'an</td><td class="mono">Xi'an</td><td class="mono new">hi1'an1</td><td class="flag">撇号是语义，不是装饰</td></tr>
+          <tr><td class="serif" style="font-size:1.2rem">先</td><td class="mono">xiān</td><td class="mono">xian</td><td class="mono">xian</td><td class="mono new">hien1</td><td class="flag">和「西安」只差一个撇号</td></tr>
+          <tr><td class="serif" style="font-size:1.2rem">知</td><td class="mono">zhī</td><td class="mono">zhi</td><td class="mono">zhi</td><td class="mono new">zhy1</td><td class="flag">舌尖元音有了自己的字母</td></tr>
+          <tr><td class="serif" style="font-size:1.2rem">鸡</td><td class="mono">jī</td><td class="mono">ji</td><td class="mono">ji</td><td class="mono new">gi1</td><td class="flag">j 被释放了</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="legend"><span>“护照 / 转写”一列混合了不同时期、不同机构的历史写法，仅作对照，不代表现行统一标准。</span></div>
+  </div>
+</section>
+
+<section class="section" id="limits">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="num">03 / 03</div>
+      <div>
+        <h2 class="display display-lg title">它不完美。</h2>
+        <p class="lede muted" style="margin-top:1em;max-width:34em">转换器能做的，和不能做的，最好一开始就说清楚。</p>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="col-6 card reveal">
+        <span class="idx">能</span>
+        <h3>确定性映射</h3>
+        <p>音节的 Pinglish 形式是查表得到的，407 个音节零碰撞。同一个拼音永远得到同一个 Pinglish，反过来也一样。</p>
+      </div>
+      <div class="col-6 card reveal">
+        <span class="idx">不能</span>
+        <h3>替你决定读音</h3>
+        <p>多音字依赖 pinyin-pro 的上下文判断。「重庆」会读 chóngqìng，但「重」在别的句子里可能读 zhòng。变调、儿化、轻声也按词典处理，不一定等于你所在地区的口语。</p>
+      </div>
+      <div class="col-6 card reveal">
+        <span class="idx">能</span>
+        <h3>保留音节边界</h3>
+        <p>撇号只在可能混淆时插入。西安 → hi1'an1，先 → hien1。反向解析会优先匹配最长音节。</p>
+      </div>
+      <div class="col-6 card reveal">
+        <span class="idx">不能</span>
+        <h3>替代语言规划</h3>
+        <p>一套拼写方案不解决教育、出版、护照、输入法、国际标准和人名惯例。那些才是拼音真正难改的地方。</p>
+      </div>
+    </div>
+
+    <div class="note-box reveal" style="margin-top:clamp(32px,5vw,56px)">
+      <div class="label">技术说明</div>
+      <p class="small" style="line-height:1.85">中文转换使用 <a href="https://github.com/zh-lx/pinyin-pro" target="_blank" rel="noopener">pinyin-pro 3.29.5</a>（MIT），随站点本地打包，不请求外部 API。Pinglish 引擎（<code>assets/js/pinglish.js</code>）与音节表（<code>assets/data/syllables.json</code>）是本项目的一部分。若发现映射错误或未覆盖的音节，请开 issue。</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="wordmark" href="index.html" style="margin-bottom:12px"><span class="dot"></span>PINGLISH</a>
+        <p style="max-width:24em">一次关于汉语拼音的公开设计练习。不是官方标准，也不打算成为官方标准。</p>
+        <p style="margin-top:1em;font-family:var(--font-mono);font-size:.62rem;letter-spacing:.06em">A PUBLIC DESIGN EXERCISE<br>1958 → 2026</p>
+      </div>
+      <div>
+        <h4>读</h4>
+        <ul>
+          <li><a href="index.html#story">一个名字，四种写法</a></li>
+          <li><a href="index.html#compromise">1958 年的四个不可能</a></li>
+          <li><a href="index.html#overload">一套字母，三份工作</a></li>
+          <li><a href="archive.html">39 份证词</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>方案</h4>
+        <ul>
+          <li><a href="scheme.html">Pinglish v1.0</a></li>
+          <li><a href="scheme.html#tables">声母 / 韵母表</a></li>
+          <li><a href="convert.html">转换器</a></li>
+          <li><a href="scheme.html#tradeoffs">已知取舍</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>更多</h4>
+        <ul>
+          <li><a href="about.html">方法与来源</a></li>
+          <li><a href="https://www.zhihu.com/question/23148320" target="_blank" rel="noopener">原知乎问题 ↗</a></li>
+          <li><a href="https://github.com/est/pinglish" target="_blank" rel="noopener">GitHub ↗</a></li>
+          <li><a href="about.html#contact">联系 / 纠错</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> PINGLISH PROJECT · 文本 CC BY-NC-SA 4.0 · 代码 MIT</span>
+      <span>拼音属于所有人，方案属于 1958 年。</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js"></script>
+<script src="assets/vendor/pinyin-pro.js"></script>
+<script src="assets/js/pinglish.js"></script>
+<script src="assets/js/convert.js"></script>
+</body>
+</html>

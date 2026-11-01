@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://pinglish.est.im/sitemap.xml

@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pinglish v1.0 — 方案</title>
+<meta name="description" content="Pinglish 的完整规格：22 个字母、407 个音节、零碰撞、可逆。一个纯 ASCII 的普通话罗马字方案。">
+<meta name="theme-color" content="#f2eee3">
+<meta property="og:image" content="https://pinglish.est.im/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="wordmark" href="index.html"><span class="dot"></span>PINGLISH <small>拼音的另一种可能</small></a>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="index.html">故事</a>
+      <a href="scheme.html">方案</a>
+      <a href="convert.html">转换器</a>
+      <a href="archive.html">档案</a>
+      <a href="about.html">关于</a>
+    </nav>
+    <div class="nav-tools">
+      <button class="icon-btn" data-theme-toggle type="button" aria-label="切换主题"></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============================================================ HERO -->
+<section class="hero wrap">
+  <div class="hero-top">
+    <span class="kicker">The scheme</span>
+    <span class="eyebrow">v1.0 · 22 letters · 407 syllables · 0 collisions</span>
+  </div>
+
+  <div class="grid">
+    <div class="col-8">
+      <p class="eyebrow" style="margin-bottom:10px">PINGLISH / 一个可逆的普通话罗马字方案</p>
+      <h1 class="display display-xl hero-title" style="max-width:12em">
+        <span class="line">一个音，</span>
+        <span class="line">一个写法。</span>
+      </h1>
+      <p class="hero-sub">没有 ü，没有声调符号，没有 y/w 隔音字母，没有 iu/ui/un 简写，没有 j/q/x。所有字符都在键盘上，所有拼写都能倒推回拼音。</p>
+      <div class="hero-actions">
+        <a class="btn btn--primary" href="#tables">看声母韵母表 <span class="arrow">↓</span></a>
+        <a class="btn" href="convert.html">直接试转换</a>
+        <a class="btn btn--ghost" href="assets/data/syllables.json" download>下载音节表 JSON</a>
+      </div>
+    </div>
+    <aside class="col-4 hero-aside">
+      <p class="note">这套方案是一个设计练习，不是官方标准。它的价值不在于“应该改成这样”，而在于证明：换一套约束条件，拼音可以长成另一个样子。</p>
+    </aside>
+  </div>
+
+  <div class="name-stack" aria-label="方案摘要">
+    <div class="name-row">
+      <span class="idx">A</span>
+      <span class="form">lv3</span>
+      <span class="meta"><strong>吕</strong><span>ü 就是 v。不需要解释，不需要 lyu。</span></span>
+    </div>
+    <div class="name-row">
+      <span class="idx">B</span>
+      <span class="form">zhy1</span>
+      <span class="meta"><strong>知</strong><span>舌尖元音有自己的字母 y。</span></span>
+    </div>
+    <div class="name-row">
+      <span class="idx">C</span>
+      <span class="form">gi1</span>
+      <span class="meta"><strong>鸡</strong><span>没有 j/q/x。g/k/h 在 i/v 前变读。</span></span>
+    </div>
+    <div class="name-row">
+      <span class="idx">D</span>
+      <span class="form">ma1</span>
+      <span class="meta"><strong>妈</strong><span>声调是拼写的一部分，不是一个帽子。</span></span>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>a <b>·</b> b <b>·</b> c <b>·</b> d <b>·</b> e <b>·</b> f <b>·</b> g <b>·</b> h <b>·</b> i <b>·</b> k <b>·</b> l <b>·</b> m <b>·</b> n <b>·</b> o <b>·</b> p <b>·</b> r <b>·</b> s <b>·</b> t <b>·</b> u <b>·</b> v <b>·</b> y <b>·</b> z <b>·</b> </span>
+    <span>a <b>·</b> b <b>·</b> c <b>·</b> d <b>·</b> e <b>·</b> f <b>·</b> g <b>·</b> h <b>·</b> i <b>·</b> k <b>·</b> l <b>·</b> m <b>·</b> n <b>·</b> o <b>·</b> p <b>·</b> r <b>·</b> s <b>·</b> t <b>·</b> u <b>·</b> v <b>·</b> y <b>·</b> z <b>·</b> </span>
+  </div>
+</div>
+
+<!-- ============================================================ 00 -->
+<section class="section" id="principles">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="num">00 / 07</div>
+      <div>
+        <h2 class="display display-lg title">六条原则。</h2>
+        <p class="lede muted" style="margin-top:1em;max-width:32em">先定约束，再谈拼写。每一条都对应 1958 年的一个妥协。</p>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="col-4 card reveal"><span class="idx">01</span><h3>纯 ASCII</h3><p>不使用 ü、声调符号或任何附加符号。v 就是元音 /y/。护照、URL、SQL、老式终端都不会吞掉它。</p></div>
+      <div class="col-4 card reveal"><span class="idx">02</span><h3>不简写</h3><p>iou、uei、uen 永远写全。没有 iu/ui/un，也不会出现「标调时主元音消失」。</p></div>
+      <div class="col-4 card reveal"><span class="idx">03</span><h3>不改写</h3><p>au 不写 ao，ung 不写 ong，iung 不写 iong，ien 不写 ian。拼写和发音之间不隔历史。</p></div>
+      <div class="col-4 card reveal"><span class="idx">04</span><h3>不设形式声母</h3><p>没有 y、w 隔音字母。零声母直接写韵母，必要时用一个撇号分音节：西安 hi1'an1。</p></div>
+      <div class="col-4 card reveal"><span class="idx">05</span><h3>舌尖元音独立</h3><p>zi/ci/si/zhi/chi/shi/ri 的韵母写作 y。zhi 和 ji 不再共用一个 i。</p></div>
+      <div class="col-4 card reveal"><span class="idx">06</span><h3>声调后置</h3><p>1–4 表示四声，0 表示轻声。声调是拼写的一部分，不是可以省略的装饰。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ 01 -->
+<section class="section" id="changes">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="num">01 / 07</div>
+      <div>
+        <h2 class="display display-lg title">改了什么。</h2>
+        <p class="lede muted" style="margin-top:1em;max-width:34em">十二条规则，覆盖现行方案里被讨论最多的十二个位置。</p>
+      </div>
+    </div>
+
+    <div class="table-wrap reveal">
+      <table class="spec">
+        <thead><tr><th>现行拼音</th><th>Pinglish</th><th>规则</th><th>例子</th></tr></thead>
+        <tbody>
+          <tr><td class="mono old">lü · nü</td><td class="mono new">lv · nv</td><td class="flag">ü → v</td><td>吕 lv3 · 女 nv3</td></tr>
+          <tr><td class="mono old">jī · qī · xī</td><td class="mono new">gi1 · ki1 · hi1</td><td class="flag">j/q/x → g/k/h（i 前）</td><td>鸡 gi1 · 七 ki1 · 西 hi1</td></tr>
+          <tr><td class="mono old">jū · qù · xū</td><td class="mono new">gv1 · kv4 · hv1</td><td class="flag">j/q/x + ü → g/k/h + v</td><td>居 gv1 · 去 kv4 · 虚 hv1</td></tr>
+          <tr><td class="mono old">zhī · zī</td><td class="mono new">zhy1 · zy1</td><td class="flag">舌尖 -i → y</td><td>知 zhy1 · 资 zy1</td></tr>
+          <tr><td class="mono old">gāo · xiǎo</td><td class="mono new">gau1 · hiau3</td><td class="flag">ao → au</td><td>高 gau1 · 小 hiau3</td></tr>
+          <tr><td class="mono old">dōng · xiōng</td><td class="mono new">dung1 · hiung1</td><td class="flag">ong → ung；iong → iung</td><td>东 dung1 · 兄 hiung1</td></tr>
+          <tr><td class="mono old">yān · biān</td><td class="mono new">ien1 · bien1</td><td class="flag">ian → ien</td><td>烟 ien1 · 边 bien1</td></tr>
+          <tr><td class="mono old">yuān · yūn</td><td class="mono new">ven1 · vn1</td><td class="flag">üan → ven；ün → vn</td><td>冤 ven1 · 晕 vn1</td></tr>
+          <tr><td class="mono old">liù · guì · lùn</td><td class="mono new">liou4 · guei4 · luen4</td><td class="flag">iu/ui/un → iou/uei/uen</td><td>六 liou4 · 贵 guei4 · 论 luen4</td></tr>
+          <tr><td class="mono old">bō · pò · mō · fó</td><td class="mono new">buo1 · puo4 · muo1 · fuo2</td><td class="flag">b/p/m/f + o → uo</td><td>波 buo1 · 破 puo4</td></tr>
+          <tr><td class="mono old">yī · wū · wǒ</td><td class="mono new">i1 · u1 · uo3</td><td class="flag">取消 y/w 形式声母</td><td>衣 i1 · 乌 u1 · 我 uo3</td></tr>
+          <tr><td class="mono old">mā · má · mǎ · mà</td><td class="mono new">ma1 · ma2 · ma3 · ma4</td><td class="flag">声调 → 数字</td><td>妈 ma1 · 麻 ma2 · 马 ma3 · 骂 ma4</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="legend"><span><i></i>红色为 Pinglish</span><span>灰色删除线为现行拼音</span><span>所有例子均为完整音节</span></div>
+  </div>
+</section>
+
+<!-- ============================================================ 02 -->
+<section class="section" id="tables">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="num">02 / 07</div>
+      <div>
+        <h2 class="display display-lg title">声母与韵母。</h2>
+        <p class="lede muted" style="margin-top:1em;max-width:34em">完整表。每一行都是一个可发音的独立音节。</p>
+      </div>
+    </div>
+
+    <h3 class="display display-sm reveal" style="margin-bottom:16px">声母 / 21</h3>
+    <div class="table-wrap reveal" style="margin-bottom:clamp(40px,6vw,64px)">
+      <table class="spec spec--dense">
+        <thead><tr><th>Pinglish</th><th>拼音</th><th>IPA</th><th>例</th><th>Pinglish</th><th>拼音</th><th>IPA</th><th>例</th></tr></thead>
+        <tbody>
+          <tr><td class="mono new">b</td><td class="mono">b</td><td class="mono">p</td><td>八 ba1</td><td class="mono new">zh</td><td class="mono">zh</td><td class="mono">tʂ</td><td>知 zhy1</td></tr>
+          <tr><td class="mono new">p</td><td class="mono">p</td><td class="mono">pʰ</td><td>怕 pa4</td><td class="mono new">ch</td><td class="mono">ch</td><td class="mono">tʂʰ</td><td>吃 chy1</td></tr>
+          <tr><td class="mono new">m</td><td class="mono">m</td><td class="mono">m</td><td>妈 ma1</td><td class="mono new">sh</td><td class="mono">sh</td><td class="mono">ʂ</td><td>诗 shy1</td></tr>
+          <tr><td class="mono new">f</td><td class="mono">f</td><td class="mono">f</td><td>发 fa1</td><td class="mono new">r</td><td class="mono">r</td><td class="mono">ɻ</td><td>日 ry4</td></tr>
+          <tr><td class="mono new">d</td><td class="mono">d</td><td class="mono">t</td><td>大 da4</td><td class="mono new">z</td><td class="mono">z</td><td class="mono">ts</td><td>资 zy1</td></tr>
+          <tr><td class="mono new">t</td><td class="mono">t</td><td class="mono">tʰ</td><td>他 ta1</td><td class="mono new">c</td><td class="mono">c</td><td class="mono">tsʰ</td><td>次 cy4</td></tr>
+          <tr><td class="mono new">n</td><td class="mono">n</td><td class="mono">n</td><td>你 ni3</td><td class="mono new">s</td><td class="mono">s</td><td class="mono">s</td><td>思 sy1</td></tr>
+          <tr><td class="mono new">l</td><td class="mono">l</td><td class="mono">l</td><td>来 lai2</td><td class="mono new">g</td><td class="mono">j</td><td class="mono">tɕ</td><td>鸡 gi1</td></tr>
+          <tr><td class="mono new">g</td><td class="mono">g</td><td class="mono">k</td><td>高 gau1</td><td class="mono new">k</td><td class="mono">q</td><td class="mono">tɕʰ</td><td>七 ki1</td></tr>
+          <tr><td class="mono new">k</td><td class="mono">k</td><td class="mono">kʰ</td><td>开 kai1</td><td class="mono new">h</td><td class="mono">x</td><td class="mono">ɕ</td><td>西 hi1</td></tr>
+          <tr><td class="mono new">h</td><td class="mono">h</td><td class="mono">x</td><td>好 hau3</td><td></td><td></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="display display-sm reveal" style="margin-bottom:16px">单韵母与复韵母</h3>
+    <div class="table-wrap reveal" style="margin-bottom:clamp(40px,6vw,64px)">
+      <table class="spec spec--dense">
+        <thead><tr><th>Pinglish</th><th>拼音</th><th>例</th><th>Pinglish</th><th>拼音</th><th>例</th><th>Pinglish</th><th>拼音</th><th>例</th></tr></thead>
+        <tbody>
+          <tr><td class="mono new">a</td><td class="mono">a</td><td>啊 a1</td><td class="mono new">ia</td><td class="mono">ia</td><td>呀 ia1</td><td class="mono new">ua</td><td class="mono">ua</td><td>蛙 ua1</td></tr>
+          <tr><td class="mono new">o</td><td class="mono">o</td><td>哦 o4</td><td class="mono new">ie</td><td class="mono">ie</td><td>耶 ie1</td><td class="mono new">uo</td><td class="mono">uo</td><td>窝 uo1</td></tr>
+          <tr><td class="mono new">e</td><td class="mono">e</td><td>鹅 e2</td><td class="mono new">iau</td><td class="mono">iao</td><td>腰 iau1</td><td class="mono new">uai</td><td class="mono">uai</td><td>歪 uai1</td></tr>
+          <tr><td class="mono new">i</td><td class="mono">i</td><td>衣 i1</td><td class="mono new">iou</td><td class="mono">iou/iu</td><td>优 iou1</td><td class="mono new">uei</td><td class="mono">uei/ui</td><td>威 uei1</td></tr>
+          <tr><td class="mono new">u</td><td class="mono">u</td><td>乌 u1</td><td class="mono new">ve</td><td class="mono">üe</td><td>月 ve4</td><td class="mono new">er</td><td class="mono">er</td><td>儿 er2</td></tr>
+          <tr><td class="mono new">v</td><td class="mono">ü</td><td>迂 v1</td><td class="mono new">ai</td><td class="mono">ai</td><td>爱 ai4</td><td class="mono new">ei</td><td class="mono">ei</td><td>诶 ei1</td></tr>
+          <tr><td class="mono new">y</td><td class="mono">-i</td><td>资 zy1</td><td class="mono new">au</td><td class="mono">ao</td><td>熬 au2</td><td class="mono new">ou</td><td class="mono">ou</td><td>欧 ou1</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="display display-sm reveal" style="margin-bottom:16px">鼻韵母</h3>
+    <div class="table-wrap reveal">
+      <table class="spec spec--dense">
+        <thead><tr><th>Pinglish</th><th>拼音</th><th>例</th><th>Pinglish</th><th>拼音</th><th>例</th><th>Pinglish</th><th>拼音</th><th>例</th></tr></thead>
+        <tbody>
+          <tr><td class="mono new">an</td><td class="mono">an</td><td>安 an1</td><td class="mono new">ien</td><td class="mono">ian</td><td>烟 ien1</td><td class="mono new">uan</td><td class="mono">uan</td><td>弯 uan1</td></tr>
+          <tr><td class="mono new">en</td><td class="mono">en</td><td>恩 en1</td><td class="mono new">in</td><td class="mono">in</td><td>因 in1</td><td class="mono new">uen</td><td class="mono">uen/un</td><td>温 uen1</td></tr>
+          <tr><td class="mono new">ang</td><td class="mono">ang</td><td>昂 ang2</td><td class="mono new">iang</td><td class="mono">iang</td><td>央 iang1</td><td class="mono new">uang</td><td class="mono">uang</td><td>汪 uang1</td></tr>
+          <tr><td class="mono new">eng</td><td class="mono">eng</td><td>鞥 eng1</td><td class="mono new">ing</td><td class="mono">ing</td><td>英 ing1</td><td class="mono new">ueng</td><td class="mono">ueng</td><td>翁 ueng1</td></tr>
+          <tr><td class="mono new">ven</td><td class="mono">üan</td><td>冤 ven1</td><td class="mono new">vn</td><td class="mono">ün</td><td>晕 vn1</td><td class="mono new">ung</td><td class="mono">ong</td><td>东 dung1</td></tr>
+          <tr><td class="mono new">iung</td><td class="mono">iong</td><td>雍 iung1</td><td class="mono new">io</td><td class="mono">io</td><td>哟 io1</td><td class="mono new">eh</td><td class="mono">ê</td><td>欸 eh1</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="legend"><span>边缘音节：m · n · ng · hm · hng · lo</span><span>所有 407 个普通话音节见 <a href="assets/data/syllables.json" download>syllables.json</a></span></div>
+  </div>
+</section>
+
+<!-- ============================================================ 03 -->
+<section class="section" id="tones">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="num">03 / 07</div>
+      <div>
+        <h2 class="display display-lg title">声调就是数字。</h2>
+        <p class="lede muted" style="margin-top:1em;max-width:34em">不标在元音上，不依赖字体，不会被输入法吞掉。</p>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="col-7 reveal">
+        <div class="table-wrap">
+          <table class="spec">
+            <thead><tr><th>声调</th><th>数字</th><th>调值</th><th>例</th><th>Pinglish</th></tr></thead>
+            <tbody>
+              <tr><td>阴平</td><td class="mono">1</td><td class="mono">55</td><td>妈 mā</td><td class="mono new">ma1</td></tr>
+              <tr><td>阳平</td><td class="mono">2</td><td class="mono">35</td><td>麻 má</td><td class="mono new">ma2</td></tr>
+              <tr><td>上声</td><td class="mono">3</td><td class="mono">214</td><td>马 mǎ</td><td class="mono new">ma3</td></tr>
+              <tr><td>去声</td><td class="mono">4</td><td class="mono">51</td><td>骂 mà</td><td class="mono new">ma4</td></tr>
+              <tr><td>轻声</td><td class="mono">0</td><td class="mono">—</td><td>吗 ma</td><td class="mono new">ma0</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="col-5 reveal">
+        <div class="note-box">
+          <div class="label">为什么是数字</div>
+          <p style="font-size:.92rem;line-height:1.85;color:var(--ink-2)">声调符号需要字体、输入法和排版系统同时配合。数字不需要。它还能排序、检索、做正则、塞进 URL，并且在任何一台 1985 年的终端上都不会变成乱码。</p>
+          <p style="margin-top:.8em;font-size:.92rem;line-height:1.85;color:var(--muted)">代价是：它不好看。我们接受这个代价。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="split reveal" style="margin-top:clamp(40px,6vw,64px)">
+      <div>
+        <p class="eyebrow" style="margin-bottom:10px">分音节</p>
+        <p class="body-lg">零声母直接写韵母。可能混淆时，用一个撇号：</p>
+        <div class="specimen" style="margin-top:16px">
+          <div class="label"><span>对比</span><span>02</span></div>
+          <div class="text">
+            西安 <span class="tone">hi1'an1</span><br>
+            先 <span class="tone">hien1</span><br>
+            天安门 <span class="tone">tien1'an1 men2</span><br>
+            方案 <span class="tone">fang1'an4</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p class="eyebrow" style="margin-bottom:10px">连写</p>
+        <p class="body-lg">词内音节连写，词间空格。Pinglish 不规定词式，只规定音节边界。</p>
+        <div class="specimen" style="margin-top:16px">
+          <div class="label"><span>句子</span><span>03</span></div>
+          <div class="text">
+            <span class="tone">uo3</span> <span class="tone">hi3</span> <span class="tone">huan0</span> <span class="tone">chy1</span> <span class="tone">bei3</span> <span class="tone">ging1</span> <span class="tone">kau3</span> <span class="tone">ia1</span>.<br>
+            <span style="font-family:var(--font-sans);font-size:.82rem;color:var(--muted)">我喜欢吃北京烤鸭。</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ 04 -->
+<section class="section" id="sample">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="num">04 / 07</div>
+      <div>
+        <h2 class="display display-lg title">读一段。</h2>
+        <p class="lede muted" style="margin-top:1em">《北风与太阳》—— 语言学里最常用的那段文本。</p>
+      </div>
+    </div>
+
+    <div class="split">
+      <div class="reveal">
+        <div class="compare-toggle" data-compare="#sample-text" role="group" aria-label="切换文本">
+          <button type="button" data-view="zh" aria-pressed="true">汉字</button>
+          <button type="button" data-view="py" aria-pressed="false">拼音</button>
+          <button type="button" data-view="pl" aria-pressed="false">Pinglish</button>
+        </div>
+        <div class="specimen" style="margin-top:16px;min-height:280px">
+          <div class="label"><span>北风与太阳 / 节选</span><span>04</span></div>
+          <div class="text" id="sample-text"
+            data-zh="有一次，北风和太阳正在争论谁比较有本事。他们正好看到一个路人走过，那个人穿着一件斗篷。"
+            data-py="Yǒu yī cì, běi fēng hé tài yáng zhèng zài zhēng lùn shéi bǐ jiào yǒu běn shì. Tā men zhèng hǎo kàn dào yī gè lù rén zǒu guò, nà gè rén chuān zhe yī jiàn dǒu péng."
+            data-pl="iou3 i1 cy4, bei3 fung1 he2 tai4 iang2 zheng4 zai4 zheng1 luen4 shei2 bi3 giau4 iou3 ben3 shy4. ta1 men0 zheng4 hau3 kan4 dau4 i1 ge4 lu4 ren2 zou3 guo4, na4 ge4 ren2 chuan1 zhe0 i1 gien4 dou3 peng2.">有一次，北风和太阳正在争论谁比较有本事。他们正好看到一个路人走过，那个人穿着一件斗篷。</div>
+        </div>
+      </div>
+      <div class="reveal">
+        <p class="eyebrow" style="margin-bottom:10px">逐词对照</p>
+        <div class="table-wrap">
+          <table class="spec spec--dense">
+            <thead><tr><th>汉字</th><th>拼音</th><th>Pinglish</th></tr></thead>
+            <tbody>
+              <tr><td>北风</td><td class="mono">běi fēng</td><td class="mono new">bei3 fung1</td></tr>
+              <tr><td>太阳</td><td class="mono">tài yáng</td><td class="mono new">tai4 iang2</td></tr>
+              <tr><td>正在</td><td class="mono">zhèng zài</td><td class="mono new">zheng4 zai4</td></tr>
+              <tr><td>争论</td><td class="mono">zhēng lùn</td><td class="mono new">zheng1 luen4</td></tr>
+              <tr><td>谁</td><td class="mono">shéi</td><td class="mono new">shei2</td></tr>
+              <tr><td>比较</td><td class="mono">bǐ jiào</td><td class="mono new">bi3 giau4</td></tr>
+              <tr><td>本事</td><td class="mono">běn shì</td><td class="mono new">ben3 shy4</td></tr>
+              <tr><td>路人</td><td class="mono">lù rén</td><td class="mono new">lu4 ren2</td></tr>
+              <tr><td>斗篷</td><td class="mono">dǒu péng</td><td class="mono new">dou3 peng2</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="small muted" style="margin-top:12px">注：谁在普通话中有 shéi / shuí 两读，这里取 shéi。示例按单字本调标注；语流中的「一」「不」变调与轻声未逐字反映。转换器会按词典和上下文输出实际读音。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ 05 -->
+<section class="section section--dark" id="tradeoffs">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="num">05 / 07</div>
+      <div>
+        <h2 class="display display-lg title">代价是什么。</h2>
+        <p class="lede" style="margin-top:1em;color:rgba(242,238,227,.68);max-width:34em">没有免费的重新设计。下面是这套方案明确放弃的东西。</p>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="col-4 card reveal"><span class="idx">01</span><h3>g/k/h 变读</h3><p>在 i/v 前读 [tɕ/tɕʰ/ɕ]，其他位置读 [k/kʰ/x]。一个字母两个音。换来的是彻底删除 j/q/x。</p></div>
+      <div class="col-4 card reveal"><span class="idx">02</span><h3>ien / ven 表音</h3><p>按实际元音 [ɛ] 拼写，牺牲了与 an/uan 的形态对应。这是「表音优先」的选择。</p></div>
+      <div class="col-4 card reveal"><span class="idx">03</span><h3>v 当元音</h3><p>在多数语言里 v 是辅音，这里是 /y/。它换来纯 ASCII、单字母、无需 ü。</p></div>
+      <div class="col-4 card reveal"><span class="idx">04</span><h3>声调数字</h3><p>不如声调符号美观。但它可输入、可搜索、可排序、可逆，也不会在字体里失踪。</p></div>
+      <div class="col-4 card reveal"><span class="idx">05</span><h3>y 表舌尖元音</h3><p>只出现在 z/c/s/zh/ch/sh/r 之后，不会与别的音冲突。但对初学者仍然是一条新规则。</p></div>
+      <div class="col-4 card reveal"><span class="idx">06</span><h3>它不解决什么</h3><p>多音字、变调、方言、人名惯例、 adoption cost。拼写系统只是语言问题的一小块。</p></div>
+    </div>
+
+    <p class="body-lg reveal" style="margin-top:clamp(36px,5vw,56px);color:rgba(242,238,227,.78);max-width:46em"><strong style="color:var(--paper)">最重要的一条：</strong>这套方案不要求任何人采用。拼音已经写进几代人的肌肉记忆，任何替换的迁移成本都远高于它的理论收益。Pinglish 的意义是作为一个参照系：让你看见现行方案在哪些地方做了选择，以及那些选择今天还在向谁收费。</p>
+  </div>
+</section>
+
+<!-- ============================================================ 06 -->
+<section class="section" id="lineage">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="num">06 / 07</div>
+      <div>
+        <h2 class="display display-lg title">它借了什么。</h2>
+        <p class="lede muted" style="margin-top:1em;max-width:34em">没有哪套罗马字是从零开始的。Pinglish 也一样。</p>
+      </div>
+    </div>
+
+    <div class="timeline reveal">
+      <div class="timeline-item"><span class="year">1918</span><span class="what">注音符号</span><span class="why">三拼结构、独立韵母。Pinglish 的 v/y 区分继承了「韵母要能独立站立」的想法。</span></div>
+      <div class="timeline-item"><span class="year">1928</span><span class="what">国语罗马字</span><span class="why">用 y 表示舌尖元音，用拼写表示声调。Pinglish 取了前者，放弃了后者。</span></div>
+      <div class="timeline-item"><span class="year">1931</span><span class="what">北方话拉丁化新文字</span><span class="why">zh/ch/sh 与 z/c/s 的配对、au/ung 的写法。Pinglish 基本沿用。</span></div>
+      <div class="timeline-item"><span class="year">1958</span><span class="what">汉语拼音方案</span><span class="why">声母系统、韵母主体、四声框架。Pinglish 的起点。</span></div>
+      <div class="timeline-item"><span class="year">2026</span><span class="what">Pinglish</span><span class="why">把「可逆、可输入、可转写」放在「历史习惯」之前。</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ 07 -->
+<section class="section section--tight" id="download">
+  <div class="wrap">
+    <div class="split">
+      <div class="reveal">
+        <p class="eyebrow" style="margin-bottom:10px">规格与实现</p>
+        <h2 class="display display-md" style="margin-bottom:1em">拿走，改，<br>或者推翻它。</h2>
+        <p class="body-lg">规格、音节表、转换引擎都在 GitHub 上。你可以用它做输入法、做字体、做教学材料，或者写一篇更好的方案。</p>
+        <div class="hero-actions">
+          <a class="btn btn--primary" href="assets/data/syllables.json" download>下载 syllables.json</a>
+          <a class="btn" href="https://github.com/est/pinglish/blob/main/SPEC.md" target="_blank" rel="noopener">SPEC.md ↗</a>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="note-box">
+          <div class="label">版本</div>
+          <p class="mono" style="font-size:.86rem;line-height:1.9">PINGLISH v1.0<br>22 letters · 407 syllables<br>0 collisions · reversible<br>tone digits 1–4, 0<br>ASCII only</p>
+          <p class="small muted" style="margin-top:1em">如果发现反例、碰撞或更好的规则，欢迎开 issue。这个方案的价值在于被检验，不在于被相信。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="wordmark" href="index.html" style="margin-bottom:12px"><span class="dot"></span>PINGLISH</a>
+        <p style="max-width:24em">一次关于汉语拼音的公开设计练习。不是官方标准，也不打算成为官方标准。</p>
+        <p style="margin-top:1em;font-family:var(--font-mono);font-size:.62rem;letter-spacing:.06em">A PUBLIC DESIGN EXERCISE<br>1958 → 2026</p>
+      </div>
+      <div>
+        <h4>读</h4>
+        <ul>
+          <li><a href="index.html#story">一个名字，四种写法</a></li>
+          <li><a href="index.html#compromise">1958 年的四个不可能</a></li>
+          <li><a href="index.html#overload">一套字母，三份工作</a></li>
+          <li><a href="archive.html">39 份证词</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>方案</h4>
+        <ul>
+          <li><a href="scheme.html">Pinglish v1.0</a></li>
+          <li><a href="scheme.html#tables">声母 / 韵母表</a></li>
+          <li><a href="convert.html">转换器</a></li>
+          <li><a href="scheme.html#tradeoffs">已知取舍</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>更多</h4>
+        <ul>
+          <li><a href="about.html">方法与来源</a></li>
+          <li><a href="https://www.zhihu.com/question/23148320" target="_blank" rel="noopener">原知乎问题 ↗</a></li>
+          <li><a href="https://github.com/est/pinglish" target="_blank" rel="noopener">GitHub ↗</a></li>
+          <li><a href="about.html#contact">联系 / 纠错</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> PINGLISH PROJECT · 文本 CC BY-NC-SA 4.0 · 代码 MIT</span>
+      <span>拼音属于所有人，方案属于 1958 年。</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js"></script>
+</body>
+</html>

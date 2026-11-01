@@ -1,11 +1,488 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Pignlish Project</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PINGLISH — 如果汉语拼音生在今天</title>
+<meta name="description" content="一个姓吕的人，在护照上是 LU，在输入法里是 LV，在银行系统里是 LYU。39 份证词、一次迟到 68 年的重新设计，以及一个可逆的普通话罗马字方案。">
+<meta property="og:title" content="PINGLISH — 如果汉语拼音生在今天">
+<meta property="og:description" content="你的名字，有几种写法？一次关于汉语拼音的公开设计练习。">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#f2eee3">
+<meta property="og:image" content="https://pinglish.est.im/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <h1>The Pignlish Project</h1>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="wordmark" href="index.html"><span class="dot"></span>PINGLISH <small>拼音的另一种可能</small></a>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="index.html">故事</a>
+      <a href="scheme.html">方案</a>
+      <a href="convert.html">转换器</a>
+      <a href="archive.html">档案</a>
+      <a href="about.html">关于</a>
+    </nav>
+    <div class="nav-tools">
+      <button class="icon-btn" data-theme-toggle type="button" aria-label="切换主题"></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============================================================ HERO -->
+<section class="hero wrap">
+  <div class="hero-top">
+    <span class="kicker">A public design exercise</span>
+    <span class="eyebrow">1958 → 2026 · 39 answers · 1 question</span>
+  </div>
+
+  <div class="grid">
+    <div class="col-8">
+      <h1 class="display display-xl hero-title">
+        <span class="line">你的名字，</span>
+        <span class="line">有几种写法？</span>
+      </h1>
+      <p class="hero-sub">一个姓吕的人，可能在护照上是 <span class="mono">LU</span>，在输入法里是 <span class="mono">LV</span>，在银行系统里是 <span class="mono">LYU</span>。汉语拼音不是不够好。它只是从 1958 年起，就没被允许长大。</p>
+      <div class="hero-actions">
+        <a class="btn btn--primary" href="#story">读这个故事 <span class="arrow">↓</span></a>
+        <a class="btn" href="convert.html">直接试新方案</a>
+      </div>
+    </div>
+    <aside class="col-4 hero-aside">
+      <p class="note">这不是一篇语言学论文。它是一份关于「一个人怎样被一套字母困住」的档案，以及一次迟到 68 年的重新设计。</p>
+    </aside>
+  </div>
+
+  <div class="name-stack" aria-label="吕字的四种写法">
+    <div class="name-row">
+      <span class="idx">01</span>
+      <span class="form">lü</span>
+      <span class="meta"><strong>字典 · 1958</strong><span>正确，但不在键盘上。</span></span>
+      <span class="stamp">正字</span>
+    </div>
+    <div class="name-row">
+      <span class="idx">02</span>
+      <span class="form">lu</span>
+      <span class="meta"><strong>护照 · 2010 年代以前</strong><span>吕被写成了陆。</span></span>
+      <span class="stamp">错位</span>
+    </div>
+    <div class="name-row">
+      <span class="idx">03</span>
+      <span class="form">lv</span>
+      <span class="meta"><strong>输入法 · 1990 年代</strong><span>v 是键盘上离 ü 最近的键。</span></span>
+      <span class="stamp">权宜</span>
+    </div>
+    <div class="name-row">
+      <span class="idx">04</span>
+      <span class="form">lyu</span>
+      <span class="meta"><strong>护照 · 2012 / 2021</strong><span>新的正确答案，但没人负责解释。</span></span>
+      <span class="stamp">现行</span>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>lü <b>·</b> lu <b>·</b> lv <b>·</b> lyu <b>·</b> nü <b>·</b> nu <b>·</b> nv <b>·</b> nyu <b>·</b> xue <b>·</b> shuey <b>·</b> xi'an <b>·</b> xian <b>·</b> shaanxi <b>·</b> shanxi <b>·</b> </span>
+    <span>lü <b>·</b> lu <b>·</b> lv <b>·</b> lyu <b>·</b> nü <b>·</b> nu <b>·</b> nv <b>·</b> nyu <b>·</b> xue <b>·</b> shuey <b>·</b> xi'an <b>·</b> xian <b>·</b> shaanxi <b>·</b> shanxi <b>·</b> </span>
+  </div>
+</div>
+
+<!-- ============================================================ 01 -->
+<section class="section" id="story">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="num">01 / 06</div>
+      <div>
+        <h2 class="display display-lg title">一个名字，<br>四种写法。</h2>
+        <p class="lede muted" style="margin-top:1em;max-width:30em">在拼音的世界里，身份不是一个哲学问题，是一串字符。</p>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="col-7 stack reveal" style="--stack:1.4em">
+        <p class="body-lg">2016 年，一位姓吕的答主在知乎写下：二十年了，每次填表，他都要盯着拼音那一栏，防止别人把他的姓写成 <span class="mono">lv</span>。他换过护照，办过信用卡，给国外学校写过解释信，证明「我是我」。</p>
+        <p class="body-lg">这不是孤例。在这份 39 个回答的档案里，姓薛的人被叫成 Mr Zoo、Mr Shoe、Mr Shui；姓吕的人收到两张信用卡，一张写 <span class="mono">lv</span>，一张写 <span class="mono">lu</span>；想打「西安」的人，打出了「先」。</p>
+
+        <blockquote class="quote">
+          <p>「当初是谁脑子进水，把 ü 这个德文字母拉进全是英文字母的拼音里面了？」</p>
+          <cite>匿名用户 · 735 赞同 · 2016</cite>
+        </blockquote>
+
+        <p class="body-lg">把这句话当成抱怨，就错过了重点。重点是：一套为 1958 年的打字机、扫盲班和外交场合设计的字母，今天正在给护照、数据库、输入法和国际会议做身份认证。</p>
+        <p class="body-lg"><strong>它没有坏。它只是超载了。</strong></p>
+      </div>
+
+      <aside class="col-5 reveal">
+        <div class="note-box" style="margin-bottom:24px">
+          <div class="label">一个数字</div>
+          <p class="serif" style="font-size:clamp(1.6rem,3vw,2.4rem);line-height:1.3">39 个回答里，<br>有 5 个在讲同一件事：<br><span class="accent">我的名字，别人写不对。</span></p>
+        </div>
+
+        <div class="timeline" aria-label="拼音身份简史">
+          <div class="timeline-item">
+            <span class="year">1958</span>
+            <span class="what">《汉语拼音方案》公布</span>
+            <span class="why">26 个拉丁字母，四声，为注音和推广普通话。</span>
+          </div>
+          <div class="timeline-item">
+            <span class="year">1977</span>
+            <span class="what">联合国地名标准化会议</span>
+            <span class="why">推荐以拼音拼写中国地名。</span>
+          </div>
+          <div class="timeline-item">
+            <span class="year">1982</span>
+            <span class="what">ISO 7098</span>
+            <span class="why">拼音成为中文罗马字转写的国际标准。</span>
+          </div>
+          <div class="timeline-item">
+            <span class="year">1990s</span>
+            <span class="what">拼音输入法</span>
+            <span class="why">拼音从注音工具，变成打字工具。</span>
+          </div>
+          <div class="timeline-item">
+            <span class="year">2012 / 2021</span>
+            <span class="what">护照改拼 lyu / nyu</span>
+            <span class="why">公安部 2012 年通知；国家移民管理局 2021 年公告确认。</span>
+          </div>
+          <div class="timeline-item">
+            <span class="year">2022</span>
+            <span class="what">Bing Dwen Dwen</span>
+            <span class="why">官方吉祥物用了广告式转写，不是标准拼音。</span>
+          </div>
+          <div class="timeline-item">
+            <span class="year">2026</span>
+            <span class="what">这份档案</span>
+            <span class="why">39 个回答，仍在争论同一件事。</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ 02 -->
+<section class="section section--dark" id="compromise">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="num">02 / 06</div>
+      <div>
+        <h2 class="display display-lg title">1958 年的<br>四个不可能。</h2>
+        <p class="lede" style="margin-top:1em;color:rgba(242,238,227,.68);max-width:32em">方案不是没想过。它想过，然后选了。</p>
+      </div>
+    </div>
+
+    <div class="grid" style="margin-bottom:clamp(40px,6vw,72px)">
+      <div class="col-3 card reveal">
+        <span class="idx">A</span>
+        <h3>准确</h3>
+        <p>一个字母一个音。最好连声调、连舌尖元音、连 ü 都能写出来。</p>
+      </div>
+      <div class="col-3 card reveal">
+        <span class="idx">B</span>
+        <h3>简短</h3>
+        <p>拼音要能快速写、快速读。双字母声母已经够长了，不要再加符号。</p>
+      </div>
+      <div class="col-3 card reveal">
+        <span class="idx">C</span>
+        <h3>二十六个键</h3>
+        <p>不能造新字母。1958 年，新字母意味着新打字机、新铅字、新教材。</p>
+      </div>
+      <div class="col-3 card reveal">
+        <span class="idx">D</span>
+        <h3>兼顾外语</h3>
+        <p>j 像英语，q 像法语，x 像葡语。四种语言不可能同时满足，但都想照顾。</p>
+      </div>
+    </div>
+
+    <div class="grid" style="align-items:center">
+      <div class="col-6 reveal">
+        <blockquote class="quote">
+          <p>「一个拼音方案需要兼顾四个方面，但这四个方面是相互矛盾的，无法完全调和。」</p>
+          <cite>Asa Ha · 298 赞同</cite>
+        </blockquote>
+        <p class="body-lg" style="margin-top:2em;color:rgba(242,238,227,.78)">1956 年，上万人参与了拼音方案的讨论。b/d/g 还是 p/t/k？zh/ch/sh 还是 ẑ/ĉ/ŝ？ü 还是 y/iu/v？三十个字母够不够？这些不是后人翻旧账，是当年的会议记录。</p>
+        <p class="body-lg" style="margin-top:1em;color:rgba(242,238,227,.78)"><strong>每一次你觉得拼音别扭，都是 1958 年的一次妥协在收利息。</strong></p>
+      </div>
+      <figure class="col-6 reveal" style="margin:0">
+        <img src="images/23148320/answer24-draft-discussion-1.jpg" alt="《汉语拼音方案草案讨论集》内页，列出关于声母写法的八个讨论题" style="border:1px solid rgba(242,238,227,.25);filter:sepia(.15) contrast(1.05)">
+        <figcaption class="small" style="margin-top:10px;color:rgba(242,238,227,.55)">《汉语拼音方案草案讨论集》（1957–58）。今天评论区里吵的问题，目录里几乎都有。图：知乎 @苗字名前</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ 03 -->
+<section class="section" id="overload">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="num">03 / 06</div>
+      <div>
+        <h2 class="display display-lg title">一套字母，<br>三份工作。</h2>
+        <p class="lede muted" style="margin-top:1em;max-width:32em">注音、输入、转写。三个目标，三种最优解。</p>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="col-4 card reveal">
+        <span class="idx">JOB 01</span>
+        <h3>给汉字注音</h3>
+        <p>要准确、系统、能教。ü 必须存在，ian 最好写成 ien，zhi 的 i 和 ji 的 i 最好分开。</p>
+        <div class="card-foot"><span class="tag">准确优先</span></div>
+      </div>
+      <div class="col-4 card reveal">
+        <span class="idx">JOB 02</span>
+        <h3>在键盘上打字</h3>
+        <p>要短、要无歧义、要能盲打。ü 最好用 v，声调最好省掉，iu/ui/un 最好缩写。</p>
+        <div class="card-foot"><span class="tag">效率优先</span></div>
+      </div>
+      <div class="col-4 card reveal">
+        <span class="idx">JOB 03</span>
+        <h3>写给世界看</h3>
+        <p>要好读、要能过海关、要能进数据库。ü 最好写 yu，x/q 最好别出现，声调最好别标。</p>
+        <div class="card-foot"><span class="tag">可读优先</span></div>
+      </div>
+    </div>
+
+    <div class="split" style="margin-top:clamp(40px,6vw,72px)">
+      <div class="reveal">
+        <p class="lede">同一个「吕」，三种工作给出三个答案：</p>
+        <div class="table-wrap" style="margin-top:1.4em">
+          <table class="spec">
+            <thead><tr><th>场景</th><th>最优拼写</th><th>为什么</th></tr></thead>
+            <tbody>
+              <tr><td>字典 / 教学</td><td class="mono new">lü</td><td>准确，保留 ü 的音位</td></tr>
+              <tr><td>输入法</td><td class="mono new">lv</td><td>键盘上只有一个 v</td></tr>
+              <tr><td>护照 / 国际转写</td><td class="mono new">lyu</td><td>可打印、可排序、不歧义</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="note-box">
+          <div class="label">真正的问题</div>
+          <p class="serif" style="font-size:clamp(1.4rem,2.4vw,2rem);line-height:1.45">这不是拼写问题，<br>是产品定位问题。</p>
+          <p style="margin-top:1em;font-size:.9rem;line-height:1.8;color:var(--muted)">一套 1958 年为「注音 + 扫盲」设计的产品，被要求同时承担输入法、身份证、国际标准和互联网 URL。任何一个产品经理都会说：这需求一开始就错了。</p>
+        </div>
+      </div>
+    </div>
+
+    <blockquote class="quote" style="margin-top:clamp(40px,6vw,72px)">
+      <p>「汉语拼音到底要用来干什么？」</p>
+      <cite>IIJEi · 87 赞同</cite>
+    </blockquote>
+  </div>
+</section>
+
+<!-- ============================================================ 04 -->
+<section class="section" id="redesign">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="num">04 / 06</div>
+      <div>
+        <h2 class="display display-lg title">如果重来一次。</h2>
+        <p class="lede muted" style="margin-top:1em;max-width:34em">我们不是要你改掉拼音。我们只想证明：另一条路是存在的。</p>
+      </div>
+    </div>
+
+    <div class="grid" style="margin-bottom:clamp(36px,5vw,56px)">
+      <div class="col-6 reveal">
+        <p class="eyebrow" style="margin-bottom:14px">PINGLISH / v1.0</p>
+        <p class="display display-md" style="margin-bottom:1em">一个音，<br>一个写法。</p>
+        <p class="body-lg">Pinglish 是一次「如果 1958 年有今天的键盘」的思想实验。它保留普通话的音系，重写全部拼写规则：没有 ü，没有声调符号，没有 y/w 隔音字母，没有 iu/ui/un 简写，没有 j/q/x。</p>
+        <div class="hero-actions">
+          <a class="btn btn--primary" href="scheme.html">看完整方案 <span class="arrow">→</span></a>
+          <a class="btn btn--ghost" href="convert.html">直接转换</a>
+        </div>
+      </div>
+      <div class="col-6 reveal">
+        <div class="specimen">
+          <div class="label"><span>同一句话 / 两种拼写</span><span>01</span></div>
+          <div class="text">
+            <div style="color:var(--muted);text-decoration:line-through;text-decoration-color:var(--line-strong)">Wǒ xǐhuān chī Běijīng kǎoyā.</div>
+            <div style="margin-top:10px"><span class="tone">uo3</span> <span class="tone">hi3</span> <span class="tone">huan0</span> <span class="tone">chy1</span> <span class="tone">bei3</span> <span class="tone">ging1</span> <span class="tone">kau3</span> <span class="tone">ia1</span>.</div>
+            <div style="margin-top:18px;font-family:var(--font-sans);font-size:.82rem;color:var(--muted);line-height:1.7">我喜欢吃北京烤鸭。<br>每个音节都以数字结尾；每个数字都是声调；每个字符都在键盘上。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="col-3 card reveal"><span class="idx">01</span><h3>纯 ASCII</h3><p>ü 写成 v，声调写成 1–4。护照、URL、数据库、老式终端都不会吞掉它。</p></div>
+      <div class="col-3 card reveal"><span class="idx">02</span><h3>不简写</h3><p>iou、uei、uen 永远写全。没有 iu/ui/un，也没有「标调时主元音消失」。</p></div>
+      <div class="col-3 card reveal"><span class="idx">03</span><h3>不改写</h3><p>au 就是 au，ung 就是 ung，ien 就是 ien。拼写和发音之间不再隔着一条历史。</p></div>
+      <div class="col-3 card reveal"><span class="idx">04</span><h3>可逆</h3><p>407 个普通话音节，映射后零碰撞。任意 Pinglish 都能唯一还原成拼音。</p></div>
+    </div>
+
+    <div class="table-wrap reveal" style="margin-top:clamp(32px,5vw,56px)">
+      <table class="spec">
+        <thead><tr><th>你熟悉的</th><th>Pinglish</th><th>规则</th></tr></thead>
+        <tbody>
+          <tr><td class="mono old">lü · nü · ju · qu · xu</td><td class="mono new">lv · nv · gv · kv · hv</td><td class="flag">ü → v；j/q/x → g/k/h</td></tr>
+          <tr><td class="mono old">zhi · chi · shi · zi · ci · si</td><td class="mono new">zhy · chy · shy · zy · cy · sy</td><td class="flag">舌尖元音 → y</td></tr>
+          <tr><td class="mono old">ao · ong · iong · ian</td><td class="mono new">au · ung · iung · ien</td><td class="flag">按实际发音改写</td></tr>
+          <tr><td class="mono old">iu · ui · un</td><td class="mono new">iou · uei · uen</td><td class="flag">取消简写</td></tr>
+          <tr><td class="mono old">bo · po · mo · fo</td><td class="mono new">buo · puo · muo · fuo</td><td class="flag">o → uo</td></tr>
+          <tr><td class="mono old">yī · wū · yú · wǒ</td><td class="mono new">i1 · u1 · v2 · uo3</td><td class="flag">取消 y/w 隔音字母</td></tr>
+          <tr><td class="mono old">mā · má · mǎ · mà</td><td class="mono new">ma1 · ma2 · ma3 · ma4</td><td class="flag">声调 → 数字</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ 05 -->
+<section class="section section--tight" id="try">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="num">05 / 06</div>
+      <div>
+        <h2 class="display display-lg title">试一试。</h2>
+        <p class="lede muted" style="margin-top:1em">输入一句中文，看它在 2026 年会长成什么样。</p>
+      </div>
+    </div>
+
+    <div class="converter reveal" id="mini-converter">
+      <div class="converter-top">
+        <span class="dots"><i></i><i></i><i></i></span>
+        <span>PINGLISH CONVERTER / MINI</span>
+        <span id="mini-status" class="muted">READY</span>
+      </div>
+      <div class="converter-body">
+        <div class="converter-row">
+          <div>
+            <label for="mini-input">中文 / 汉字</label>
+            <textarea id="mini-input" rows="2" spellcheck="false">汉语拼音是一套注音方案</textarea>
+          </div>
+          <div class="converter-swap" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 8h13l-3-3M20 16H7l3 3"/></svg>
+          </div>
+          <div>
+            <label for="mini-output">Pinglish</label>
+            <div class="converter-output" id="mini-output" aria-live="polite"><span class="placeholder">等待输入……</span></div>
+          </div>
+        </div>
+        <div class="converter-actions">
+          <button class="btn btn--sm btn--primary" type="button" id="mini-run">转换</button>
+          <button class="btn btn--sm" type="button" id="mini-shuffle">换一句</button>
+          <a class="btn btn--sm btn--ghost" href="convert.html">完整转换器 <span class="arrow">→</span></a>
+        </div>
+        <p class="converter-hint">中文分词与多音字由 <a href="https://github.com/zh-lx/pinyin-pro" target="_blank" rel="noopener">pinyin-pro</a> 提供（MIT）。Pinglish 映射与可逆性由本站实现。声调数字 <code>1–4</code>，轻声 <code>0</code>。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ 06 -->
+<section class="section" id="archive-preview">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="num">06 / 06</div>
+      <div>
+        <h2 class="display display-lg title">39 份证词。</h2>
+        <p class="lede muted" style="margin-top:1em;max-width:32em">有人丢了姓，有人丢了声调，有人只想证明这套方案没错。</p>
+      </div>
+    </div>
+
+    <div class="stats reveal" style="margin-bottom:clamp(32px,5vw,56px)">
+      <div class="stat"><div class="num">39</div><div class="label">个回答</div></div>
+      <div class="stat"><div class="num">4,172</div><div class="label">次赞同</div></div>
+      <div class="stat"><div class="num">11</div><div class="label">年跨度</div></div>
+      <div class="stat"><div class="num">1</div><div class="label">个问题</div></div>
+    </div>
+
+    <div class="grid">
+      <div class="col-4 card reveal">
+        <span class="idx">证词 · 名字的代价 · 735 赞同</span>
+        <p class="serif" style="font-size:1.15rem;line-height:1.7;margin-top:.8em">「每次给国外寄材料，都要专门去信解释半天，证明『我是我』。」</p>
+        <div class="card-foot"><a class="link-arrow" href="archive.html#answer-1">读全文</a></div>
+      </div>
+      <div class="col-4 card reveal">
+        <span class="idx">批评 · 音系的硬伤 · 77 赞同</span>
+        <p class="serif" style="font-size:1.15rem;line-height:1.7;margin-top:.8em">「连这两类都能合并了，为什么不干脆彻底一点？」</p>
+        <div class="card-foot"><a class="link-arrow" href="archive.html#answer-12">读全文</a></div>
+      </div>
+      <div class="col-4 card reveal">
+        <span class="idx">反方 · 维持与正名 · 602 赞同</span>
+        <p class="serif" style="font-size:1.15rem;line-height:1.7;margin-top:.8em">「它的名称应该叫『普通话拼音』，而不是汉语拼音。」</p>
+        <div class="card-foot"><a class="link-arrow" href="archive.html#answer-3">读全文</a></div>
+      </div>
+    </div>
+
+    <div style="margin-top:32px" class="reveal">
+      <a class="btn" href="archive.html">进入档案区 <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ CTA -->
+<section class="section section--dark section--tight">
+  <div class="wrap-narrow" style="text-align:center">
+    <p class="eyebrow" style="margin-bottom:18px">A DISCLAIMER, BEFORE YOU SHARE THIS</p>
+    <h2 class="display display-md" style="margin-bottom:1em">这不是一次<br>废除拼音的运动。</h2>
+    <p class="body-lg" style="color:rgba(242,238,227,.72);max-width:38em;margin-inline:auto">我们不建议任何人改掉现在的拼音。它已经写进字典、护照、教科书和几代人的肌肉记忆。这个项目只想做一件事：证明另一条路在理论上存在，并且可以被清楚地展示出来。</p>
+    <div class="hero-actions" style="justify-content:center;margin-top:28px">
+      <a class="btn btn--primary" href="scheme.html">读完整方案</a>
+      <a class="btn" href="about.html">关于这个项目</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="wordmark" href="index.html" style="margin-bottom:12px"><span class="dot"></span>PINGLISH</a>
+        <p style="max-width:24em">一次关于汉语拼音的公开设计练习。不是官方标准，也不打算成为官方标准。</p>
+        <p style="margin-top:1em;font-family:var(--font-mono);font-size:.62rem;letter-spacing:.06em">A PUBLIC DESIGN EXERCISE<br>1958 → 2026</p>
+      </div>
+      <div>
+        <h4>读</h4>
+        <ul>
+          <li><a href="index.html#story">一个名字，四种写法</a></li>
+          <li><a href="index.html#compromise">1958 年的四个不可能</a></li>
+          <li><a href="index.html#overload">一套字母，三份工作</a></li>
+          <li><a href="archive.html">39 份证词</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>方案</h4>
+        <ul>
+          <li><a href="scheme.html">Pinglish v1.0</a></li>
+          <li><a href="scheme.html#tables">声母 / 韵母表</a></li>
+          <li><a href="convert.html">转换器</a></li>
+          <li><a href="scheme.html#tradeoffs">已知取舍</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>更多</h4>
+        <ul>
+          <li><a href="about.html">方法与来源</a></li>
+          <li><a href="https://www.zhihu.com/question/23148320" target="_blank" rel="noopener">原知乎问题 ↗</a></li>
+          <li><a href="https://github.com/est/pinglish" target="_blank" rel="noopener">GitHub ↗</a></li>
+          <li><a href="about.html#contact">联系 / 纠错</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> PINGLISH PROJECT · 文本 CC BY-NC-SA 4.0 · 代码 MIT</span>
+      <span>拼音属于所有人，方案属于 1958 年。</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js"></script>
+<script src="assets/vendor/pinyin-pro.js"></script>
+<script src="assets/js/pinglish.js"></script>
+<script src="assets/js/convert.js"></script>
 </body>
 </html>

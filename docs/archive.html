@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>档案 — 39 份证词 · PINGLISH</title>
+<meta name="description" content="39 个知乎回答的完整档案：关于汉语拼音的姓名、音系、历史、输入效率与改革方案。可按立场筛选、搜索、展开全文。">
+<meta name="theme-color" content="#f2eee3">
+<meta property="og:image" content="https://pinglish.est.im/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="wordmark" href="index.html"><span class="dot"></span>PINGLISH <small>拼音的另一种可能</small></a>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="index.html">故事</a>
+      <a href="scheme.html">方案</a>
+      <a href="convert.html">转换器</a>
+      <a href="archive.html">档案</a>
+      <a href="about.html">关于</a>
+    </nav>
+    <div class="nav-tools">
+      <button class="icon-btn" data-theme-toggle type="button" aria-label="切换主题"></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="hero wrap" style="padding-bottom:clamp(36px,5vw,64px)">
+  <div class="hero-top">
+    <span class="kicker">The archive</span>
+    <span class="eyebrow">39 answers · 2015 → 2026 · one question</span>
+  </div>
+  <div class="grid">
+    <div class="col-8">
+      <h1 class="display display-xl hero-title" style="max-width:12em">
+        <span class="line">39 份</span>
+        <span class="line">证词。</span>
+      </h1>
+      <p class="hero-sub">有人丢了姓，有人丢了声调，有人只想证明这套方案没错。按立场筛选，按赞同或时间排序，或者随机抽一份。</p>
+    </div>
+    <aside class="col-4 hero-aside">
+      <p class="note">档案按赞同数排序。全文保留原文的段落、图片、链接和表格；观点属于原作者，不代表本站立场。</p>
+    </aside>
+  </div>
+</section>
+
+<section class="section section--flush" style="padding-top:0">
+  <div class="wrap">
+
+    <div class="stats reveal" style="margin-bottom:clamp(28px,4vw,48px)">
+      <div class="stat"><div class="num" data-stat="count">39</div><div class="label">个回答</div></div>
+      <div class="stat"><div class="num" data-stat="votes">4,172</div><div class="label">次赞同</div></div>
+      <div class="stat"><div class="num" data-stat="years">11</div><div class="label">年跨度</div></div>
+      <div class="stat"><div class="num" data-stat="stances">5</div><div class="label">种立场</div></div>
+    </div>
+
+    <div class="archive-toolbar">
+      <div class="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+        <input id="archive-search" type="search" placeholder="搜索作者、关键词、句子…" autocomplete="off" aria-label="搜索档案">
+      </div>
+      <div class="chips" id="archive-chips" role="group" aria-label="按立场筛选">
+        <button class="chip" type="button" data-stance="all" aria-pressed="true">全部 <span data-count="all">39</span></button>
+        <button class="chip" type="button" data-stance="testimony" aria-pressed="false">名字的代价 <span data-count="testimony">5</span></button>
+        <button class="chip" type="button" data-stance="reform" aria-pressed="false">改良方案 <span data-count="reform">16</span></button>
+        <button class="chip" type="button" data-stance="defend" aria-pressed="false">维持与正名 <span data-count="defend">6</span></button>
+        <button class="chip" type="button" data-stance="history" aria-pressed="false">历史与制度 <span data-count="history">8</span></button>
+        <button class="chip" type="button" data-stance="detail" aria-pressed="false">细节与教学 <span data-count="detail">4</span></button>
+      </div>
+      <div style="display:flex;gap:8px;align-items:center">
+        <select id="archive-sort" class="select" aria-label="排序方式">
+          <option value="votes">按赞同</option>
+          <option value="date-desc">按时间（新→旧）</option>
+          <option value="date-asc">按时间（旧→新）</option>
+        </select>
+        <button class="chip" type="button" id="archive-random">随机一则</button>
+      </div>
+      <div class="archive-count" id="archive-count">载入中…</div>
+    </div>
+
+    <div class="archive-grid" id="archive-grid" aria-live="polite"></div>
+    <div class="empty-state" id="archive-empty" hidden>没有匹配的回答。换一个关键词，或者点「全部」。</div>
+
+    <noscript>
+      <div class="empty-state" style="margin-top:24px">档案需要 JavaScript 才能筛选和展开。你也可以直接阅读仓库里的 <code>docs/23148320.md</code>。</div>
+    </noscript>
+
+    <div class="note-box" style="margin-top:clamp(40px,6vw,64px)">
+      <div class="label">关于原文</div>
+      <p class="small" style="line-height:1.85">所有回答的著作权属于原作者，原文链接指向知乎。本页为评论、研究和存档目的引用，保留作者署名与原链接；如作者不希望被收录，请联系我们删除。赞同数与日期为网页保存时的数据，可能已变化。</p>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="wordmark" href="index.html" style="margin-bottom:12px"><span class="dot"></span>PINGLISH</a>
+        <p style="max-width:24em">一次关于汉语拼音的公开设计练习。不是官方标准，也不打算成为官方标准。</p>
+        <p style="margin-top:1em;font-family:var(--font-mono);font-size:.62rem;letter-spacing:.06em">A PUBLIC DESIGN EXERCISE<br>1958 → 2026</p>
+      </div>
+      <div>
+        <h4>读</h4>
+        <ul>
+          <li><a href="index.html#story">一个名字，四种写法</a></li>
+          <li><a href="index.html#compromise">1958 年的四个不可能</a></li>
+          <li><a href="index.html#overload">一套字母，三份工作</a></li>
+          <li><a href="archive.html">39 份证词</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>方案</h4>
+        <ul>
+          <li><a href="scheme.html">Pinglish v1.0</a></li>
+          <li><a href="scheme.html#tables">声母 / 韵母表</a></li>
+          <li><a href="convert.html">转换器</a></li>
+          <li><a href="scheme.html#tradeoffs">已知取舍</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>更多</h4>
+        <ul>
+          <li><a href="about.html">方法与来源</a></li>
+          <li><a href="https://www.zhihu.com/question/23148320" target="_blank" rel="noopener">原知乎问题 ↗</a></li>
+          <li><a href="https://github.com/est/pinglish" target="_blank" rel="noopener">GitHub ↗</a></li>
+          <li><a href="about.html#contact">联系 / 纠错</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> PINGLISH PROJECT · 文本 CC BY-NC-SA 4.0 · 代码 MIT</span>
+      <span>拼音属于所有人，方案属于 1958 年。</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js"></script>
+<script src="assets/js/archive.js"></script>
+</body>
+</html>
